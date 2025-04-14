@@ -7,34 +7,36 @@
 3. capitalize, uppercase-all and lowercase-all strings
 4. concatenate integer, float, boolean and string
 5. convert array to a comma separated string
-6. Create a function roll() that generates 2 numbers between 1 to 6
-7. Create function: add(x,y) that returns the sum of 2 numbers
-8. Create a function square(x) that returns the square of the number
-9. Create a function greater(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
-10. Ask for an float number input and output it as rounded number
-11. Check if a string contains a substring (5 test set)
-12. print out current date/time
-13. print out current unix timestamp in seconds and milliseconds using built in functions if available
-14. print out a date/time on a different timezone
-15. for loop: list of time on different timezones (use associative array or standard object)
-16. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
-17. complete 24 timezones list (numeric array of objects/assoc array)
-18. remove 2 random timezones from the timezone list on the previous task
-19. Loop through the 24 timezone list, and search for the timezone of the running machine, then output, and break the loop using "break" keyword or it's equivalent
-20. add 1 hour interval to current time and output (date/time manipulation [oop??])
-21. get date yesterday and output (date/time manipulation [substraction and rounding off])
-22. output remaining seconds on the current day
-23. get remaining milliseconds of current the day
-24. get remaining microseconds of the current day
-25. ask for a year input and output if it's a leap year or not using built in functions if possible
-26. ask for date input and convert to unix timestamp
-27. ask for 2 date inputs, and output which one is greater, use ternary operator or it's equivalent to do this.
-28. new: Create a function to calculate the cube of a number
-29. ask for input and tell how old it is in days (rounded off) [substraction, division]
-30. ask for date input and tell how many days remaining until said date, but throw an error if it's a not future date (substraction, division, exceptions/error logging)
-31. output fibonacci sequence (base 1) on each keypress
-32. (WIP) Create a function that calculates the factorial of a number
+6. declare 5 integers and output each of the digits in each integer in each line
+7. Create a function roll() that generates 2 numbers between 1 to 6
+8. Create function: add(x,y) that returns the sum of 2 numbers
+9. Create a function square(x) that returns the square of the number
+10. Create a function greater(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
+11. Ask for an float number input and output it as rounded number
+12. Check if a string contains a substring (5 test set)
+13. print out current date/time
+14. print out current unix timestamp in seconds and milliseconds using built in functions if available
+15. print out a date/time on a different timezone
+16. for loop: list of time on different timezones (use associative array or standard object)
+17. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
+18. complete 24 timezones list (numeric array of objects/assoc array)
+19. remove 2 random timezones from the timezone list on the previous task
+20. Loop through the 24 timezone list, and search for the timezone of the running machine, then output, and break the loop using "break" keyword or it's equivalent
+21. add 1 hour interval to current time and output (date/time manipulation [oop??])
+22. get date yesterday and output (date/time manipulation [substraction and rounding off])
+23. output remaining seconds on the current day
+24. get remaining milliseconds of current the day
+25. get remaining microseconds of the current day
+26. ask for a year input and output if it's a leap year or not using built in functions if possible
+27. ask for date input and convert to unix timestamp
+28. ask for 2 date inputs, and output which one is greater, use ternary operator or it's equivalent to do this.
+29. new: Create a function to calculate the cube of a number
+30. ask for input and tell how old it is in days (rounded off) [substraction, division]
+31. ask for date input and tell how many days remaining until said date, but throw an error if it's a not future date (substraction, division, exceptions/error logging)
+32. output fibonacci sequence (base 1) on each keypress
 
+
+TO be reviewed(some from AI)
 ## Intermediate Tasks
 62. new: Create a simple multi-dimensional array
 63. new: Add elements to nested arrays
