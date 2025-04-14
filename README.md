@@ -1,4 +1,7 @@
 # 365 Daily Programming Language Learning Tasks
+List of tasks to do to learn a 
+new programming language 
+but only spending 10 minutes a day
 (10 minutes per day)
 
 ## Beginner Tasks
