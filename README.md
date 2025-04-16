@@ -40,25 +40,29 @@ but only spending 10 minutes a day
 33. output fibonacci sequence (base 1) on each keypress
 
 
-TO be reviewed(some from AI)
-## Intermediate Tasks
-62. new: Create a simple multi-dimensional array
-63. new: Add elements to nested arrays
-64. new: Convert an array to a set (remove duplicates)
-65. new: Find the intersection of two arrays
-66. new: Find the difference between two arrays
-67. reverse string using built in function(s) 
-68. reverse string using loop by character iteration
-69. reverse string using function recursion
-70. split string using a delimiter
-71. get the domain of an email address
-72. new: Create an array of objects
-73. new: Sort an array of numbers
-74. new: Sort an array of strings
-75. new: Sort an array of objects by a property
-76. new: Filter array elements that match a condition
-77. new: Use array map to transform elements
-78. new: Use array reduce to calculate a sum
+TO be reviewed(some from AI
+34. reverse string using built in function(s) 
+35. reverse string using loop by character iteration
+36. reverse string using function recursion
+37. split string using a delimiter
+38. join a character array to form a string
+39. get the domain of an email address
+
+
+new: Create a simple multi-dimensional array
+34. new: Add elements to nested arrays
+36. new: Convert an array to a set (remove duplicates)
+37. new: Find the intersection of two arrays
+38. new: Find the difference between two arrays
+
+
+73. new: Create an array of objects
+74. new: Sort an array of numbers
+75. new: Sort an array of strings
+76. new: Sort an array of objects by a property
+77. new: Filter array elements that match a condition
+78. new: Use array map to transform elements
+79. new: Use array reduce to calculate a sum
 80. ask for input but only accept numbers
 81. ask for single digit input, then print out the english word for it, using swith case statement
 82. ask for input but only accept whole numbers
