@@ -24,6 +24,8 @@ but only spending 10 minutes a day
 17. Ask for an float number input and output it as rounded number
 18. Ask for 2 number inputs, output their sum
 19. Ask for 2 string inputs, check if the first string contains the 2nd string, output yes or no
+20. for loop: count up to ten in words, using associative array or hashmap
+21. ask for one of two defined languages, count up to ten in words on the language chosen
 22. for loop: list of time on different timezones (use associative array or standard object)
 23. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
 24. complete 24 timezones list (numeric array of objects/assoc array)
