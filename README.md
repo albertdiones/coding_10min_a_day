@@ -11,41 +11,46 @@ but only spending 10 minutes a day
 4. capitalize, uppercase-all and lowercase-all strings using built in function
 5. concatenate integer, float, boolean and string without getting an error
 6. convert array to a comma separated string
-7. declare 5 integers and output each of the digits in each integer in each line
-8. Create function: add(x,y) that returns the sum of 2 numbers
-9. Create a function square(x) that returns the square of the number
-10. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
-11. Create a function roll() that generates 2 numbers between 1 to 6
-12. print out current date/time
-13. print out current unix timestamp in seconds and milliseconds using built in functions if available
-14. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
-15. print out the date/time on New York City
-16. Ask for a number input, throw an error when it's not a number
-17. Ask for an float number input and output it as rounded number
-18. Ask for 2 number inputs, output their sum
-19. Ask for 2 string inputs, check if the first string contains the 2nd string, output yes or no
-20. for loop: count up to ten in words, using associative array or hashmap
-21. ask for one of two defined languages, count up to ten in words on the language chosen
-22. for loop: list of time on different timezones (use associative array or standard object)
-23. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
-24. complete 24 timezones list (numeric array of objects/assoc array)
-25. remove 2 random timezones from the timezone list on the previous task
-26. Loop through the 24 timezone list, and search for the timezone of the running machine, then output, and break the loop using "break" keyword or it's equivalent
-27. add 1 hour interval to current time and output (date/time manipulation [oop??])
-28. get date yesterday and output (date/time manipulation [substraction and rounding off])
-29. output remaining seconds on the current day
+7. split string using a delimiter
+8. split string in an array of characters
+9. output unique characters on a string using array-unique functions
+10. declare 5 integers and output each of the digits in each integer in each line
+11. Create function: add(x,y) that returns the sum of 2 numbers
+12. Create a function square(x) that returns the square of the number
+13. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
+14. Create a function roll() that generates 2 numbers between 1 to 6
+15. print out current date/time
+16. print out current unix timestamp in seconds and milliseconds using built in functions if available
+17. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
+18. output remaining seconds on the current day
 30. get remaining milliseconds of current the day
 31. get remaining microseconds of the current day
 32. ask for a year input and output if it's a leap year or not using built in functions if possible
 33. ask for date input and convert to unix timestamp
-34. ask for 2 date inputs, and output which one is greater, use ternary operator or it's equivalent to do this.
+16. print out the date/time on New York City
+17. add 1 hour interval to current time and output (date/time manipulation [oop??])
+18. get date yesterday and output (date/time manipulation [substraction and rounding off])
+19. Ask for a number input, throw an error when it's not a number
+20. Ask for an float number input and output it as rounded number
+21. Ask for 2 number inputs, output their sum
+22. Ask for 2 string inputs, check if the first string contains the 2nd string, output yes or no
+23. for loop: count up to ten in words, using associative array or hashmap
+24. ask for one of two defined languages, count up to ten in words on the language chosen
+25. for loop: list of time on different timezones (use associative array or standard object)
+26. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
+27. complete 24 timezones list (numeric array of objects/assoc array)
+28. remove 2 random timezones from the timezone list on the previous task
+29. Loop through the 24 timezone list, and search for the timezone of the running machine, then output, and break the loop using "break" keyword or it's equivalent
+30. ask for 2 date inputs, and output which one is greater, use ternary operator or it's equivalent to do this.
 35. new: Create a function to calculate the cube of a number
 36. ask for input and tell how old it is in days (rounded off) [substraction, division]
 37. ask for date input and tell how many days remaining until said date, but throw an error if it's a not future date (substraction, division, exceptions/error logging)
 38. output fibonacci sequence (base 1) on each keypress
 
 
-TO be reviewed(some from AI
+TO be reviewed(some from AI)
+
+
 34. reverse string using built in function(s) 
 35. reverse string using loop by character iteration
 36. reverse string using function recursion
