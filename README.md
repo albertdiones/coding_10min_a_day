@@ -8,21 +8,22 @@ but only spending 10 minutes a day
 1. setup environment/compiler and print out hello world
 2. declare 2 string variables, 1 is hello, 1 is world, concatenate to say hello world
 3. Trim whitespace from strings using built in function
-4. capitalize, uppercase-all and lowercase-all strings using built in function
-5. concatenate integer, float, boolean and string without getting an error
-6. convert array to a comma separated string
-7. split string using a delimiter
-8. split string in an array of characters
-9. output unique characters on a string using array-unique functions
-10. declare 5 integers and output each of the digits in each integer in each line
-11. Create function: add(x,y) that returns the sum of 2 numbers
-12. Create a function square(x) that returns the square of the number
-13. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
-14. Create a function roll() that generates 2 numbers between 1 to 6
-15. print out current date/time
-16. print out current unix timestamp in seconds and milliseconds using built in functions if available
-17. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
-18. output remaining seconds on the current day
+4. uppercase-all and lowercase-all strings using built in function
+5. capitalize(uppercase first letter of each word) strings using built in function
+6. concatenate integer, float, boolean and string without getting an error
+7. convert array to a comma separated string
+8. split string using a delimiter
+9. split string in an array of characters
+10. output unique characters on a string using array-unique functions
+11. declare 5 integers and output each of the digits in each integer in each line
+12. Create function: add(x,y) that returns the sum of 2 numbers
+13. Create a function square(x) that returns the square of the number
+14. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
+15. Create a function roll() that generates 2 numbers between 1 to 6
+16. print out current date/time
+17. print out current unix timestamp in seconds and milliseconds using built in functions if available
+18. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
+19. output remaining seconds on the current day
 30. get remaining milliseconds of current the day
 31. get remaining microseconds of the current day
 32. ask for a year input and output if it's a leap year or not using built in functions if possible
