@@ -16,16 +16,17 @@ but only spending 10 minutes a day
 9. convert array to a comma separated string
 10. split string using a delimiter
 11. split string in an array of characters
-12. output unique characters on a string using array-unique functions
-13. declare 5 integers and output each of the digits in each integer in each line
-14. Create function: add(x,y) that returns the sum of 2 numbers
-15. Create a function square(x) that returns the square of the number
-16. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
-17. Create a function roll() that generates 2 numbers between 1 to 6
-18. print out current date/time
-19. print out current unix timestamp in seconds and milliseconds using built in functions if available
-20. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
-21. output remaining seconds on the current day
+12. loop through a numeric array preferrably not using manual index increment
+13. output unique characters on a string using array-unique functions
+14. declare 5 integers and output each of the digits in each integer in each line
+15. Create function: add(x,y) that returns the sum of 2 numbers
+16. Create a function square(x) that returns the square of the number
+17. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
+18. Create a function roll() that generates 2 numbers between 1 to 6
+19. print out current date/time
+20. print out current unix timestamp in seconds and milliseconds using built in functions if available
+21. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
+22. output remaining seconds on the current day
 30. get remaining milliseconds of current the day
 31. get remaining microseconds of the current day
 32. ask for a year input and output if it's a leap year or not using built in functions if possible
