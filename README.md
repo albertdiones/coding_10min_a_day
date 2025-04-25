@@ -15,7 +15,7 @@ but only spending 10 minutes a day
 8. contatenate boolean and string without getting an error
 9. convert array to a comma separated string
 10. split string using a delimiter
-11. split string in an array of characters
+11. split string to an array of (single) characters
 12. loop through a numeric array preferrably not using manual index increment
 13. output unique characters on a string using array-unique functions
 14. declare 5 integers and output each of the digits in each integer in each line
