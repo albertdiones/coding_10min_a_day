@@ -17,19 +17,20 @@ but only spending 10 minutes a day
 10. split string using a delimiter
 11. split string to an array of (single) characters
 12. loop through a numeric array preferrably not using manual index increment
-13. output unique characters on a string using array-unique functions
-14. declare 5 integers and output each of the digits in each integer in each line
-15. Create function: add(x,y) that returns the sum of 2 numbers
-16. Create functions: subtract(x,y), divide(x,y), multiple(x,y)
-17. Create a function that will subtract y from x, but only until zero
-18. Create a function square(x) that returns the square of the number
-19. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
-20. Create a function roll() that generates 2 numbers between 1 to 6
-21. print out current date/time
-22. print out current date; then print out current time; using 2 separate function call, but outputting on the same line
-23. print out current unix timestamp in seconds and milliseconds using built in functions if available
-24. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
-25. output remaining seconds on the current day
+13. loop through a numeric array printing both the index and the value
+14. output unique characters on a string using array-unique functions
+15. declare 5 integers and output each of the digits in each integer in each line
+16. Create function: add(x,y) that returns the sum of 2 numbers
+17. Create functions: subtract(x,y), divide(x,y), multiple(x,y)
+18. Create a function that will subtract y from x, but only until zero
+19. Create a function square(x) that returns the square of the number
+20. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
+21. Create a function roll() that generates 2 numbers between 1 to 6
+22. print out current date/time
+23. print out current date; then print out current time; using 2 separate function call, but outputting on the same line
+24. print out current unix timestamp in seconds and milliseconds using built in functions if available
+25. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
+26. output remaining seconds on the current day
 30. get remaining milliseconds of current the day
 31. get remaining microseconds of the current day
 32. ask for a year input and output if it's a leap year or not using built in functions if possible
