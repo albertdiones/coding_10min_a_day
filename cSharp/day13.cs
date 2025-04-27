@@ -11,7 +11,24 @@ string[] names = [
     "Abby",
     "Marky",
     "Gab",
-    "Raide"
+    "Raide",
+    "Byre",
+    "Sebby",
+    "Jv",
+    "Raul",
+    "VmosPro547",
+    "Zura",
+    "Kanor",
+    "Kiko",
+    "Diwata",
+    "Los",
+    "Mik",
+    "Andy",
+    "Umaay",
+    "Cayatano",
+    "Darry",
+    "Imee",
+    "Almagro"
 ];
 
 foreach (
