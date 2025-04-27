@@ -14,6 +14,12 @@ string[] names = [
     "Raide"
 ];
 
-foreach(string name in names) {
-    Console.WriteLine(name);
+foreach (
+    var (index, name) 
+    in names.Select(
+        (arrayValue, Arrayindex) 
+            => (Arrayindex, arrayValue)
+    )
+) {
+    Console.WriteLine(index + ": " + name);
 }
