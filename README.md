@@ -19,7 +19,7 @@ but only spending 10 minutes a day
 12. loop through a numeric array preferrably not using manual index increment
 13. loop through a numeric array printing both the index and the value
 14. split a name string into a char-array, then capitalize the first letter by overwriting char-array item zero, then reconstruct into a string
-15. output a defined array, then pop an item from the array, print, and then push a new item then print again
+15. print a defined array, then pop an item from the array, print array, and then push a new item then print array again
 16. output unique characters on a string using array-unique functions
 17. declare 5 integers and output each of the digits in each integer in each line
 18. Create function: add(x,y) that returns the sum of 2 numbers
