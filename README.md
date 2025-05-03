@@ -22,23 +22,30 @@ but only spending 10 minutes a day
 15. print a defined array, then remove the last item using array pop or equivalent
 16. print array, and then push a new item using array push or equivalent
 17. print out unique characters from a string using built-in array-unique function or it's equivalent
-18. print out unique characters and their count on a string
-19. declare 5 integers and output each of the digits in each integer in each line
-20. Create function: add(x,y) that returns the sum of 2 numbers
-21. Create functions: subtract(x,y), divide(x,y), multiple(x,y)
-22. Create a function that will subtract y from x, but only until zero
-23. Create a function square(x) that returns the square of the number
-24. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
-25. Create a function roll() that generates 2 numbers between 1 to 6
-26. print out current date/time
-27. print out current date; then print out current time; using 2 separate function call, but outputting on the same line
-28. print out current unix timestamp in seconds and milliseconds using built in functions if available
-29. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
-30. output remaining seconds on the current day
-31. get remaining milliseconds of current the day
-32. get remaining microseconds of the current day
-33. ask for a year input and output if it's a leap year or not using built in functions if possible
-34. ask for date input and convert to unix timestamp
+18. Ask for a input, print out the unique characters on that input
+19. output a number, and wait for a keypress, then increment the number and print it out, then repeat
+20. output fibonacci sequence (base 1) on each keypress
+21. Ask for a number input, print an error when it's not a number using if else
+22. Ask for a number input, throw an error if it's more than 100 or less than zero
+23. Ask for a number input from 1 to 10 and printout the word equivalent of it (e.g. one, two, three) using associative array or dictionary or it's equivalent
+24. (formerly day18) print out unique characters and their count on a string
+25. 
+26. declare 5 integers and output each of the digits in each integer in each line
+27. Create function: add(x,y) that returns the sum of 2 numbers
+28. Create functions: subtract(x,y), divide(x,y), multiple(x,y)
+29. Create a function that will subtract y from x, but only until zero
+30. Create a function square(x) that returns the square of the number
+31. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
+32. Create a function roll() that generates 2 numbers between 1 to 6
+33. print out current date/time
+34. print out current date; then print out current time; using 2 separate function call, but outputting on the same line
+35. print out current unix timestamp in seconds and milliseconds using built in functions if available
+36. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
+37. output remaining seconds on the current day
+38. get remaining milliseconds of current the day
+39. get remaining microseconds of the current day
+40. ask for a year input and output if it's a leap year or not using built in functions if possible
+41. ask for date input and convert to unix timestamp
 16. print out the date/time on New York City
 17. add 1 hour interval to current time and output (date/time manipulation [oop??])
 18. get date yesterday and output (date/time manipulation [substraction and rounding off])
