@@ -27,7 +27,7 @@ but only spending 10 minutes a day
 20. output fibonacci sequence (base 1) on each keypress
 21. Ask for a number input, print an error when it's not a number using if else
 22. Ask for a number input, throw an error if it's more than 100 or less than zero
-23. Ask for a number input from 1 to 10 and printout the word equivalent of it (e.g. one, two, three) using associative array or dictionary or it's equivalent
+23. Ask for a string input for numbers 1 to 10 in words (e.g. one, two...) then output it's translation in tagalog
 24. (formerly day18) print out unique characters and their count on a string
 25. 
 26. declare 5 integers and output each of the digits in each integer in each line
