@@ -29,8 +29,7 @@ but only spending 10 minutes a day
 22. Ask for a number input, throw an error if it's more than 100 or less than zero
 23. Ask for a string input for numbers 1 to 10 in words (e.g. one, two...) then output it's translation in tagalog
 24. (formerly day18) print out unique characters and their count on a string
-25. 
-26. declare 5 integers and output each of the digits in each integer in each line
+25. declare 5 integers and output each of the digits in each integer in each line
 27. Create function: add(x,y) that returns the sum of 2 numbers
 28. Create functions: subtract(x,y), divide(x,y), multiple(x,y)
 29. Create a function that will subtract y from x, but only until zero
