@@ -5,8 +5,6 @@ Console.WriteLine("Press any key to increment; q to exit");
 Console.WriteLine(x1);
 int x2 = x1;
 
-int x3;
-
 // 1,1,2,3,5,8
 while (
     true
@@ -17,9 +15,9 @@ while (
     break;
   }
   
-  x3= x1 + x2;
-  x1 = x2;
-  x2 = x3;
+  int sum = x1 + x2;
+  x1 = x2; 
+  x2 = sum;
 
-  Console.WriteLine(x3.ToString());
+  Console.WriteLine(sum.ToString());
 }

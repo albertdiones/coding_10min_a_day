@@ -18,8 +18,17 @@ func main() {
 	num, err := strconv.Atoi(input)
 
 	if err == nil {
-		fmt.Println("Success!")
+		if (num >= 0 && num<=100) {
+			fmt.Println(
+				"Valid number accepted"
+				);
+		}
+		else {
+			return null, errors.New(
+				"number not within the range"
+			);
+		}
 	} else {
-		fmt.Println("Not a number!")
+		fmt.Println("Not a number!");
 	}
 }
