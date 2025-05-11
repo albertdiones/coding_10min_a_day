@@ -29,12 +29,11 @@ but only spending 10 minutes a day
 22. Ask for a number input, throw an error if it's more than 100 or less than zero
 23. Ask for a string input for numbers 1 to 10 in words (e.g. one, two...) then output it's translation in tagalog
 24. (formerly day18) print out unique characters and their count on a string
-25. declare 5 integers and output each of the digits in each integer in each line
-27. Create function: add(x,y) that returns the sum of 2 numbers
-28. Create functions: subtract(x,y), divide(x,y), multiple(x,y)
-29. Create a function that will subtract y from x, but only until zero
-30. Create a function square(x) that returns the square of the number
-31. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
+25. Create function: add(x,y) that returns the sum of 2 numbers
+26. Create functions: subtract(x,y), divide(x,y), multiple(x,y)
+27. Create a function that will subtract y from x, but only until zero
+28. Create a function square(x) that returns the square of the number
+29. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
 32. Create a function roll() that generates 2 numbers between 1 to 6
 33. print out current date/time
 34. print out current date; then print out current time; using 2 separate function call, but outputting on the same line
@@ -68,6 +67,7 @@ but only spending 10 minutes a day
 
 TO be reviewed(some from AI)
 
+declare 5 integers and output each of the digits in each integer in each line
 
 34. reverse string using built in function(s) 
 35. reverse string using loop by character iteration
