@@ -34,10 +34,10 @@ but only spending 10 minutes a day
 27. Create a function that will subtract y from x, but only until zero
 28. Create a function square(x) that returns the square of the number
 29. Create a function greatest(x,y,z) that returns which of the 3 given numbers are greater (using > or < signs)
-32. Create a function roll() that generates 2 numbers between 1 to 6
-33. print out current date/time
-34. print out current date; then print out current time; using 2 separate function call, but outputting on the same line
-35. print out current unix timestamp in seconds and milliseconds using built in functions if available
+30. Create a function roll() that generates 2 numbers between 1 to 6
+31. print out current date/time
+32. print out current date; then print out current time; using 2 separate function call, but outputting on the same line
+33. print out current unix timestamp in seconds and milliseconds using built in functions if available
 36. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
 37. output remaining seconds on the current day
 38. get remaining milliseconds of current the day
