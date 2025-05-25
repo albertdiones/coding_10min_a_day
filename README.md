@@ -47,11 +47,12 @@ but only spending 10 minutes a day
 40. print out the date/time on New York City
 41. add 1 hour interval to current time and output (date/time manipulation [oop??])
 42. get date yesterday and output (date/time manipulation [substraction and rounding off])
-19. Ask for a number input, throw an error when it's not a number
-20. Ask for an float number input and output it as rounded number
-21. Ask for 2 number inputs, output their sum
-22. Ask for 2 string inputs, check if the first string contains the 2nd string, output yes or no
-23. for loop: count up to ten in words, using associative array or hashmap
+43. Ask for an float number input and output it as rounded number
+
+
+
+22. 
+
 24. ask for one of two defined languages, count up to ten in words on the language chosen
 25. for loop: list of time on different timezones (use associative array or standard object)
 26. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
@@ -63,6 +64,13 @@ but only spending 10 minutes a day
 36. ask for input and tell how old it is in days (rounded off) [substraction, division]
 37. ask for date input and tell how many days remaining until said date, but throw an error if it's a not future date (substraction, division, exceptions/error logging)
 38. output fibonacci sequence (base 1) on each keypress
+
+String Manipulation Batch:
+
+Ask for 2 string inputs, check if the first string contains the 2nd string, output yes or no
+
+Ask for a email address input, validated
+
 
 
 TO be reviewed(some from AI)
@@ -385,3 +393,7 @@ new: Create a simple multi-dimensional array
 363. new: Create a distributed autonomous organization framework
 364. new: Implement a prediction market system
 365. new: Build your own programming language
+
+
+21. Ask for 2 number inputs, output their sum (already oneday 25)
+23. for loop: count up to ten in words, using associative array or hashmap (day 23)
