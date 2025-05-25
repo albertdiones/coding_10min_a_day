@@ -38,15 +38,15 @@ but only spending 10 minutes a day
 31. print out current date/time
 32. print out current date; then print out current time; using 2 separate function call, but outputting on the same line
 33. print out current unix timestamp in seconds and milliseconds using built in functions if available
-36. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
-37. output remaining seconds on the current day
-38. get remaining milliseconds of current the day
-39. get remaining microseconds of the current day
-40. ask for a year input and output if it's a leap year or not using built in functions if possible
-41. ask for date input and convert to unix timestamp
-16. print out the date/time on New York City
-17. add 1 hour interval to current time and output (date/time manipulation [oop??])
-18. get date yesterday and output (date/time manipulation [substraction and rounding off])
+34. print out the current date time but with the specific format: `Mon Jan 13 2025 14:54:30`
+35. output remaining seconds on the current day
+36. get remaining milliseconds of current the day
+37. get remaining microseconds of the current day
+38. ask for a year input and output if it's a leap year or not using built in functions if possible
+39. ask for date input and convert to unix timestamp
+40. print out the date/time on New York City
+41. add 1 hour interval to current time and output (date/time manipulation [oop??])
+42. get date yesterday and output (date/time manipulation [substraction and rounding off])
 19. Ask for a number input, throw an error when it's not a number
 20. Ask for an float number input and output it as rounded number
 21. Ask for 2 number inputs, output their sum
