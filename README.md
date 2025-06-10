@@ -47,12 +47,8 @@ but only spending 10 minutes a day
 40. print out the date/time on New York City
 41. add 1 hour interval to current time and output (date/time manipulation [oop??])
 42. get date yesterday and output (date/time manipulation [substraction and rounding off])
-43. Ask for an float number input and output it as rounded number
-
-
-
-22. 
-
+43. complete 24 timezones list (numeric array of objects/assoc array)
+44. 
 24. ask for one of two defined languages, count up to ten in words on the language chosen
 25. for loop: list of time on different timezones (use associative array or standard object)
 26. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
