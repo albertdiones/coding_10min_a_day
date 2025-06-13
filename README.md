@@ -48,9 +48,17 @@ but only spending 10 minutes a day
 41. add 1 hour interval to current time and output (date/time manipulation [oop??])
 42. get date yesterday and output (date/time manipulation [substraction and rounding off])
 43. attempt to list 24 timezones list (numeric array of objects/assoc array)
-44. Censor the word fuck and dead with asterisk
-45. Check if string contains '@'
-46. Check if string contains @gmail.com
+44. Censor the word fuck and dead with constant length asterisk
+45. Censor bad words but with equal amount asterisk
+46. Check if string contains '@' using regex
+47. Check if the string matches email pattern `.+\@.+\..+`
+48. Check if string contains at least 1 digit
+49. Check if string contains at least 1 symbol
+50. Check if string contains at least 1 upper case letter
+51. Check if string contains at least 1 lowercase letter
+52. Check if string contains 1 digit, 1 symbol, 1 uppercase letter and 1 lowercase and is more than 10 characters long
+
+
 24. ask for one of two defined languages, count up to ten in words on the language chosen
 25. for loop: list of time on different timezones (use associative array or standard object)
 26. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
