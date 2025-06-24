@@ -50,13 +50,15 @@ but only spending 10 minutes a day
 43. attempt to list 24 timezones list (numeric array of objects/assoc array)
 44. Censor the word fuck and dead with constant length asterisk
 45. Censor bad words but with equal amount asterisk
-46. Check if string contains '@' using regex
-47. Check if the string matches email pattern `.+\@.+\..+`
-48. Check if string contains at least 1 digit
-49. Check if string contains at least 1 symbol
-50. Check if string contains at least 1 upper case letter
-51. Check if string contains at least 1 lowercase letter
-52. Check if string contains 1 digit, 1 symbol, 1 uppercase letter and 1 lowercase and is more than 10 characters long
+46. Check if string contains '@'
+47. Check if string contains '.'
+48. Check if string contains '@' and '.' using regex
+49. Check if the string matches email pattern `.+\@.+\..+`
+50. Check if string contains at least 1 digit
+51. Check if string contains at least 1 symbol
+52. Check if string contains at least 1 upper case letter
+53. Check if string contains at least 1 lowercase letter
+54. Check if string contains 1 digit, 1 symbol, 1 uppercase letter and 1 lowercase and is more than 10 characters long
 
 
 24. ask for one of two defined languages, count up to ten in words on the language chosen
