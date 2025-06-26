@@ -59,7 +59,11 @@ but only spending 10 minutes a day
 52. Check if string contains at least 1 upper case letter
 53. Check if string contains at least 1 lowercase letter
 54. Check if string contains 1 digit, 1 symbol, 1 uppercase letter and 1 lowercase and is more than 10 characters long
-
+55. Check if string is 8 digits
+56. Check if string contains 8 digits (even if there's dash)
+57. Check if string contains 8 digits (even if there's dash, space or +)
+58. Check if string is 8 digits or 11 (09123456789)
+59. Check if string is 8 digits or 11 or starting with +, plus 12 digits
 
 ------
 
