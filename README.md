@@ -61,6 +61,8 @@ but only spending 10 minutes a day
 54. Check if string contains 1 digit, 1 symbol, 1 uppercase letter and 1 lowercase and is more than 10 characters long
 
 
+------
+
 24. ask for one of two defined languages, count up to ten in words on the language chosen
 25. for loop: list of time on different timezones (use associative array or standard object)
 26. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
