@@ -62,8 +62,10 @@ but only spending 10 minutes a day
 55. Check if string is 8 digits
 56. Check if string contains 8 digits (even if there's dash)
 57. Check if string contains 8 digits (even if there's dash, space or +)
+58. Check if string contains 8 or 10 digits
+59. Check if string contains 8 or 10 digits (even if there's dash, space or + parenthesis) (02) 8-555-6677
 58. Check if string is 8 digits or 11 (09123456789)
-59. Check if string is 8 digits or 11 or starting with +, plus 12 digits
+59. Check if string is 8 digits or 11 or starting with +, plus 12 digits (+63)
 
 ------
 
