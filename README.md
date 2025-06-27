@@ -69,6 +69,15 @@ but only spending 10 minutes a day
 
 ------
 
+Hash a password with md5 algo
+Hash a password with sha1 algo
+Hash a password with sha256 algo
+
+Encrypt a text with aes algo
+
+
+------
+
 24. ask for one of two defined languages, count up to ten in words on the language chosen
 25. for loop: list of time on different timezones (use associative array or standard object)
 26. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
