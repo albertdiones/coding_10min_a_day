@@ -69,6 +69,15 @@ but only spending 10 minutes a day
 
 ------
 
+34. reverse string using built in function(s) 
+35. reverse string using loop by character iteration
+36. reverse string using function recursion
+37. split string using a delimiter
+38. join a character array to form a string
+39. get the domain of an email address
+
+Ask for 2 string inputs, check if the first string contains the 2nd string, output yes or no
+
 Hash a password with md5 algo
 Hash a password with sha1 algo
 Hash a password with sha256 algo
@@ -76,23 +85,22 @@ Hash a password with sha256 algo
 Encrypt a text with aes algo
 
 
+
+Find an api for postal code validation
+
+
 ------
 
-24. ask for one of two defined languages, count up to ten in words on the language chosen
-25. for loop: list of time on different timezones (use associative array or standard object)
-26. add new timezones on the list on previous task using array_push() and array_unshift() equivalent
-27. complete 24 timezones list (numeric array of objects/assoc array)
-28. remove 2 random timezones from the timezone list on the previous task
-29. Loop through the 24 timezone list, and search for the timezone of the running machine, then output, and break the loop using "break" keyword or it's equivalent
+
+
 30. ask for 2 date inputs, and output which one is greater, use ternary operator or it's equivalent to do this.
 35. new: Create a function to calculate the cube of a number
-36. ask for input and tell how old it is in days (rounded off) [substraction, division]
+
 37. ask for date input and tell how many days remaining until said date, but throw an error if it's a not future date (substraction, division, exceptions/error logging)
-38. output fibonacci sequence (base 1) on each keypress
 
 String Manipulation Batch:
 
-Ask for 2 string inputs, check if the first string contains the 2nd string, output yes or no
+
 
 Ask for a email address input, validated
 
@@ -102,12 +110,6 @@ TO be reviewed(some from AI)
 
 declare 5 integers and output each of the digits in each integer in each line
 
-34. reverse string using built in function(s) 
-35. reverse string using loop by character iteration
-36. reverse string using function recursion
-37. split string using a delimiter
-38. join a character array to form a string
-39. get the domain of an email address
 
 
 new: Create a simple multi-dimensional array
