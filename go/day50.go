@@ -15,7 +15,7 @@ func main() {
 	password1, _ := reader.ReadString('\n')
 	password1 = strings.TrimSpace(password1)
 
-	match, _ := regexp.MatchString("[1-9]+",password1)
+	match, _ := regexp.MatchString("\\d+",password1)
 
 	fmt.Println("Valid Password:", match);
 }
