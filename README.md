@@ -66,6 +66,8 @@ but only spending 10 minutes a day
 59. Check if string contains 8 or 10 digits (even if there's dash, space or + parenthesis) (02) 8-555-6677
 58. Check if string is 8 digits or 11 (09123456789)
 59. Check if string is 8 digits or 11 or starting with +, plus 12 digits (+63)
+60. Ask for an input, but instead of echo-ing the output asterisk for each keypress
+61. Ask for an input, and output asterisk for each character pressed
 
 ------
 
