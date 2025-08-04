@@ -69,6 +69,12 @@ but only spending 10 minutes a day
 60. Ask for an input, but instead of echo-ing the output asterisk for each keypress
 61. Ask for an input, and output asterisk for each character pressed
 
+
+62. Check if string contains a digit w/o using regex
+63. Check if string contains lowercase letter w/o using regex
+64. Check if string contains uppercase letter w/o using regex
+65. Check if string contains a symbol w/o using regex
+
 ------
 
 34. reverse string using built in function(s) 
