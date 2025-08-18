@@ -68,13 +68,12 @@ but only spending 10 minutes a day
 59. Check if string is 8 digits or 11 or starting with +, plus 12 digits (+63)
 60. Check if string has 8 digits, or 11 digits starting with zero, or string begins with +, and contains 12 digits; valid: 8812-5566; (0922)3334455; +63922-3334455
 61. Ask for an input, but instead of echo-ing the output asterisk for each keypress
-62. Ask for an input, and output asterisk for each character pressed
-
-
-63. Check if string contains a digit w/o using regex
-64. Check if string contains lowercase letter w/o using regex
-65. Check if string contains uppercase letter w/o using regex
-66. Check if string contains a symbol w/o using regex
+62. Ask for an input, and output asterisk for each character presses
+63. Ask for an input, output asterisk for each char press, and support backspace
+65. Check if string contains a digit w/o using regex
+66. Check if string contains lowercase letter w/o using regex
+67. Check if string contains uppercase letter w/o using regex
+68. Check if string contains a symbol w/o using regex
 
 ------
 
