@@ -72,11 +72,20 @@ but only spending 10 minutes a day
 63. Ask for an input, output asterisk for each char press, and support backspace
 64. Ask for a password input and save to a variable (and print out)
 65. Ask for a password input(with backspace support) and save to a txt file
-66. Ask for a password input and save to a txt file as hash
-67. Check if string contains a digit w/o using regex
-68. Check if string contains lowercase letter w/o using regex
-69. Check if string contains uppercase letter w/o using regex
-70. Check if string contains a symbol w/o using regex
+66. Ask for a password input and save to a txt file as md5 hash
+67. Ask for a password input and save to a txt file as sha1 hash
+68. Ask for a password input and save to a txt file as sha256 hash
+69. Check if string contains a digit w/o using regex
+70. Check if string contains lowercase letter w/o using regex
+71. Check if string contains uppercase letter w/o using regex
+72. Check if string contains a symbol w/o using regex
+73. Ask for a credit/debit card input then validate using regex
+74. Ask for a credit/debit card input allow spaces
+75. Ask for a credit/debit card input then validate using luhn algo
+76. Ask for a credit/debit card input then store as encrypted base64 on a file using a constant key
+77. Fetch encrypted cc number from previous day, decrypt
+78. Ask for a credit/debit card input then ask the user for a pin, use the pin to encrypt the cc number then save to txt file as base64
+79. Fetch encrypted cc number from previous day, ask user for the pin, decrypt and print out on the screen
 
 ------
 
