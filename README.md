@@ -71,7 +71,7 @@ but only spending 10 minutes a day
 62. Ask for an input, and output asterisk for each character presses
 63. Ask for an input, output asterisk for each char press, and support backspace
 64. Ask for a password input and save to a variable (and print out)
-65. Ask for a password input and save to a txt file
+65. Ask for a password input(with backspace support) and save to a txt file
 66. Ask for a password input and save to a txt file as hash
 67. Check if string contains a digit w/o using regex
 68. Check if string contains lowercase letter w/o using regex
