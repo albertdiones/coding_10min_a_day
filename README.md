@@ -76,18 +76,19 @@ but only spending 10 minutes a day
 67. Ask for a password input and save to a txt file as sha1 hash
 68. Ask for a password input and save to a txt file as sha256 hash
 69. Ask for a password and validate using a stored hash on txt file
-70. Check if password hash file exists, ask for a new password if not, if it exists, ask for the password, then validate using the stored hash txt file
-71. Check if string contains a digit w/o using regex
-72. Check if string contains lowercase letter w/o using regex
-73. Check if string contains uppercase letter w/o using regex
-74. Check if string contains a symbol w/o using regex
-75. Ask for a credit/debit card input then validate using regex
-76. Ask for a credit/debit card input allow spaces
-77. Ask for a credit/debit card input then validate using luhn algo
-78. Ask for a credit/debit card input then store as encrypted base64 on a file using a constant key
-79. Fetch encrypted cc number from previous day, decrypt
-80. Ask for a credit/debit card input then ask the user for a pin, use the pin to encrypt the cc number then save to txt file as base64
-81. Fetch encrypted cc number from previous day, ask user for the pin, decrypt and print out on the screen
+70. Ask for a password and validate using a stored sha1 hash on txt file
+71. Check if password hash file exists, ask for a new password if not, if it exists, ask for the password, then validate using the stored hash txt file
+72. Check if string contains a digit w/o using regex
+73. Check if string contains lowercase letter w/o using regex
+74. Check if string contains uppercase letter w/o using regex
+75. Check if string contains a symbol w/o using regex
+76. Ask for a credit/debit card input then validate using regex
+77. Ask for a credit/debit card input allow spaces
+78. Ask for a credit/debit card input then validate using luhn algo
+79. Ask for a credit/debit card input then store as encrypted base64 on a file using a constant key
+80. Fetch encrypted cc number from previous day, decrypt
+81. Ask for a credit/debit card input then ask the user for a pin, use the pin to encrypt the cc number then save to txt file as base64
+82. Fetch encrypted cc number from previous day, ask user for the pin, decrypt and print out on the screen
 
 ------
 
