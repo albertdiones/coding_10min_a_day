@@ -1,2 +1,5 @@
 rust/**/target
 **/*.exe
+**/__*
+**/day*.txt
+**/rust-day*.txt
