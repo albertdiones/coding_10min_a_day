@@ -86,9 +86,10 @@ but only spending 10 minutes a day
 77. Ask for a credit/debit card input allow spaces
 78. Ask for a credit/debit card input then validate using luhn algo
 79. Ask for a credit/debit card input then store as encrypted base64 on a file using a constant key
-80. Fetch encrypted cc number from previous day, decrypt
+80. Fetch encrypted cc number from previous day, decrypt using the constant key
 81. Ask for a credit/debit card input then ask the user for a pin, use the pin to encrypt the cc number then save to txt file as base64
 82. Fetch encrypted cc number from previous day, ask user for the pin, decrypt and print out on the screen
+83. Check if cc info exists, if yes, ask for a pin, if not, ask for a new cc info, and save on a file
 
 ------
 
