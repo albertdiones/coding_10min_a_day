@@ -78,15 +78,12 @@ but only spending 10 minutes a day
 69. Ask for a password and validate using a stored hash on txt file
 70. Ask for a password and validate using a stored sha1 hash on txt file
 71. Check if password hash file exists, ask for a new password if not, if it exists, ask for the password, then validate using the stored hash txt file
-74. Ask for a password, support left arrow and highlight character using a cursor character
-75. Ask for a password, support left arrow and insert
-76. Ask for a password, support left & right arrow and insert
-77. Ask for a password, support left & right & delete buttons
-78. Check if string contains a digit w/o using regex
-73. Check if string contains lowercase letter w/o using regex
-74. Check if string contains uppercase letter w/o using regex
-75. Check if string contains a symbol w/o using regex
-76. Ask for a credit/debit card input then validate using regex
+
+74. Check if string contains a digit w/o using regex
+75. Check if string contains lowercase letter w/o using regex
+76. Check if string contains uppercase letter w/o using regex
+77. Check if string contains a symbol w/o using regex
+78. Ask for a credit/debit card input then validate using regex
 77. Ask for a credit/debit card input allow spaces
 78. Ask for a credit/debit card input then validate using luhn algo
 79. Ask for a credit/debit card input then store as encrypted base64 on a file using a constant key
@@ -96,6 +93,12 @@ but only spending 10 minutes a day
 83. Check if cc info exists, if yes, ask for a pin, if not, ask for a new cc info, and save on a file
 
 ------
+
+baCKLOG
+74. Ask for a password, support left arrow and highlight character using a cursor character
+75. Ask for a password, support left arrow and insert
+76. Ask for a password, support left & right arrow and insert
+77. Ask for a password, support left & right & delete buttons
 
 34. reverse string using built in function(s) 
 35. reverse string using loop by character iteration
