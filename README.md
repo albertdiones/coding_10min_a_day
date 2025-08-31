@@ -78,7 +78,7 @@ but only spending 10 minutes a day
 69. Ask for a password and validate using a stored hash on txt file
 70. Ask for a password and validate using a stored sha1 hash on txt file
 71. Check if password hash file exists, ask for a new password if not, if it exists, ask for the password, then validate using the stored hash txt file
-74. Ask for a password, support left arrow and insert
+74. Ask for a password, support left arrow and highlight character using a cursor character
 75. Ask for a password, support left arrow and insert
 76. Ask for a password, support left & right arrow and insert
 77. Ask for a password, support left & right & delete buttons
