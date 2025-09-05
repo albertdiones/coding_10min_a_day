@@ -83,7 +83,10 @@ but only spending 10 minutes a day
 75. Ask for password input and check if it contains lowercase letter w/o using regex
 76. CheckAsk for password input and check if it contains uppercase letter w/o using regex
 77. Ask for password input and check if it contains a symbol w/o using regex
-78. Ask for a credit/debit card input then validate using regex
+78. Ask for passsword input and require all (digit, symbol, uppercase, lowercase)
+79. Ask for passwoord input and require at least 3 (digit, symbol, uppercase, lowercase)
+80. Ask for a password input, if new, require strong password and register, if password exists(hashed password txt file), require existing password
+81. Ask for a credit/debit card input then validate using regex
 77. Ask for a credit/debit card input allow spaces
 78. Ask for a credit/debit card input then validate using luhn algo
 79. Ask for a credit/debit card input then store as encrypted base64 on a file using a constant key
