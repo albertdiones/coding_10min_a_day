@@ -86,8 +86,34 @@ but only spending 10 minutes a day
 78. Ask for passsword input and require all (digit, symbol, uppercase, lowercase)
 79. Ask for passwoord input and require at least 3 (digit, symbol, uppercase, lowercase)
 80. Ask for a password input, if new, require strong password and register, if password exists(hashed password txt file), require existing password
-81. Ask for a credit/debit card input then validate using regex
-77. Ask for a credit/debit card input allow spaces
+81. Ask for a credit/debit card input then validate using regex  
+82. Ask for a credit/debit card input allow spaces  
+83. create function addToCsv() that will create a csv file or append a row to an existing csv file, returning the row#  
+84. create function readCsvRow(rowId)  
+85. using readCSVRow(), create function readAllCsvRows()  
+86. using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of row#  
+87. using readCSVRow() create function findFirstCsvRow(columnName, value)  
+88. updateCSVRow(rowId, column, value)  
+89. deleteCSVRow(rowId)
+90. ask for an email input, add to csv (Create)
+91. ask for an email input, do not allow duplicates (findFirst)
+92. ask for an email & name input, add to csv (2 columns) (Create)
+93. ask for an email & name input, if email is duplicate, update name(Update)
+94. Ask for a name, output all matching csv row (exact match) searchMultiple
+95. Ask for a name, output all matching csv row (first/lastname only match)
+96. Ask for a text, search email or name then output matches
+97. Ask for a rowid, delete csv row immediately
+98. Ask for a rowid, delete csv row after confirmation prompt
+99. readAll?
+
+------
+
+baCKLOG
+
+91. validate email domain using regex  
+92. ask for an email input require gmail, yahoo or outlook only 
+85. validate email domain using fetch(or it's equivalent) albert@yahoo.com
+86. validate email domain using dns
 78. Ask for a credit/debit card input then validate using luhn algo
 79. Ask for a credit/debit card input then store as encrypted base64 on a file using a constant key
 80. Fetch encrypted cc number from previous day, decrypt using the constant key
@@ -95,9 +121,6 @@ but only spending 10 minutes a day
 82. Fetch encrypted cc number from previous day, ask user for the pin, decrypt and print out on the screen
 83. Check if cc info exists, if yes, ask for a pin, if not, ask for a new cc info, and save on a file
 
-------
-
-baCKLOG
 74. Ask for a password, support left arrow and highlight character using a cursor character
 75. Ask for a password, support left arrow and insert
 76. Ask for a password, support left & right arrow and insert
@@ -108,7 +131,7 @@ baCKLOG
 36. reverse string using function recursion
 37. split string using a delimiter
 38. join a character array to form a string
-39. get the domain of an email address
+39. 
 
 Ask for 2 string inputs, check if the first string contains the 2nd string, output yes or no
 
