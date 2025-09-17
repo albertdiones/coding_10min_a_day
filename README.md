@@ -89,22 +89,24 @@ but only spending 10 minutes a day
 81. Ask for a credit/debit card input then validate using regex  
 82. Ask for a credit/debit card input allow spaces  
 83. create function addToCsv() that will create a csv file or append a row to an existing csv file, returning the row#  
-84. create function readCsvRow(rowId)  
-85. using readCSVRow(), create function readAllCsvRows()  
-86. using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of row#  
-87. using readCSVRow() create function findFirstCsvRow(columnName, value)  
-88. updateCSVRow(rowId, column, value)  
-89. deleteCSVRow(rowId)
-90. ask for an email input, add to csv (Create)
-91. ask for an email input, do not allow duplicates (findFirst)
-92. ask for an email & name input, add to csv (2 columns) (Create)
-93. ask for an email & name input, if email is duplicate, update name(Update)
-94. Ask for a name, output all matching csv row (exact match) searchMultiple
-95. Ask for a name, output all matching csv row (first/lastname only match)
-96. Ask for a text, search email or name then output matches
-97. Ask for a rowid, delete csv row immediately
-98. Ask for a rowid, delete csv row after confirmation prompt
-99. readAll?
+84. create function readCsvRow(rowId) that returns a numeric array of the row values
+85. using readCSVRow(), create function readAllCsvRows()
+86. create function getCsvColumnNumber(columnName) returns the position of the column (base 1)
+87. create function getCsvCellValue(rowId, columnNumber)
+88. using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of row#  
+89. using readCSVRow() create function findFirstCsvRow(columnName, value)  
+90. updateCSVRow(rowId, column, value)  
+91. deleteCSVRow(rowId)
+92. ask for an email input, add to csv (Create)
+93. ask for an email input, do not allow duplicates (findFirst)
+94. ask for an email & name input, add to csv (2 columns) (Create)
+95. ask for an email & name input, if email is duplicate, update name(Update)
+96. Ask for a name, output all matching csv row (exact match) searchMultiple
+97. Ask for a name, output all matching csv row (first/lastname only match)
+98. Ask for a text, search email or name then output matches
+99. Ask for a rowid, delete csv row immediately
+100. Ask for a rowid, delete csv row after confirmation prompt
+101. readAll?
 
 ------
 
