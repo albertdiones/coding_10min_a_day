@@ -61,8 +61,7 @@ func readCsvRow(rowId int) []string {
 	return trimQuotes(strings.Split(rows[rowId],","));
 }
 
-func readAllCsvRow() [][]string {
-	
+func getCsvRowCount() int {
 	dbFile := "__db.csv"
 	// Read entire file to count lines
 	rowBytes, err := os.ReadFile(dbFile)
@@ -70,12 +69,20 @@ func readAllCsvRow() [][]string {
 		panic(err)
 	}
 	rows := strings.Split(string(rowBytes), "\n")
+	return len(rows);
+}
 
-	result := make([][]string, len(rows))
-	for i,row := range rows {
-		result[i] = trimQuotes(strings.Split(row,","));
+func readAllCsvRow() [][]string {
+
+	numRows := getCsvRowCount()
+
+	fmt.Println("numRows", numRows);
+
+	rows := make([][]string, numRows);
+	for x := 0; x < numRows; x++ {
+		rows[x] = readCsvRow(x);
 	}
-	return result;
+	return rows;
 }
 
 func main() {
