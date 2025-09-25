@@ -93,9 +93,9 @@ but only spending 10 minutes a day
 85. using readCSVRow(), create function readAllCsvRows()
 86. create function getCsvColumnNumber(columnName) returns the position of the column (base 1)
 87. create function getCsvCellValue(rowId, columnNumber)
-88. using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of row#  
+88. using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of rowId
 89. using readCSVRow() create function findFirstCsvRow(columnName, value)  
-90. updateCSVRow(rowId, column, value)  
+90. updateCSVRow(rowId, column, value) - updates the specified rowId row's column value
 91. deleteCSVRow(rowId)
 92. ask for an email input, add to csv (Create)
 93. ask for an email input, do not allow duplicates (findFirst)
