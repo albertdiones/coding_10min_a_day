@@ -96,7 +96,7 @@ but only spending 10 minutes a day
 88. using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of rowId
 89. using readCSVRow() create function findFirstCsvRow(columnName, value)  
 90. updateCSVRow(rowId, column, value) - updates the specified rowId row's column value
-91. deleteCSVRow(rowId)
+91. day91 - deleteCSVRow(rowId) deletes a row from csv specified by the rowId
 92. ask for an email input, add to csv (Create)
 93. ask for an email input, do not allow duplicates (findFirst)
 94. ask for an email & name input, add to csv (2 columns) (Create)
