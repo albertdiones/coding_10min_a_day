@@ -106,7 +106,11 @@ but only spending 10 minutes a day
 98. Ask for a text, search email or name then output matches
 99. Ask for a rowid, delete csv row immediately
 100. Ask for a rowid, delete csv row after confirmation prompt
-101. readAll?
+101. read all csv row and output
+102. output csv as pretty table (text format)
+102. press S to search use feature in day97
+103. press A to add new row, feature in day83
+104. press D to delete a row
 
 ------
 
