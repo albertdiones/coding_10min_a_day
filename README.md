@@ -108,9 +108,14 @@ but only spending 10 minutes a day
 100. Ask for a rowid, delete csv row after confirmation prompt
 101. read all csv row and output
 102. output csv as pretty table (text format)
-102. press S to search use feature in day97
-103. press A to add new row, feature in day83
-104. press D to delete a row
+103. press S to search use feature in day98
+104. press A to add new row, feature in day83
+105. press D to delete a row
+
+- create a partial match search function
+- case insensitive search
+- create pretty print function
+
 
 ------
 
