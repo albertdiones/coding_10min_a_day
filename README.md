@@ -110,7 +110,7 @@ but only spending 10 minutes a day
 102. output csv as pretty table (text format)
 103. press S to search use feature in day98
 104. press A to add new row, feature in day83
-105. press D to delete a row
+105. press D to delete a row, do feature from day100
 
 - create a partial match search function
 - case insensitive search
