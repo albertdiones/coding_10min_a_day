@@ -111,6 +111,8 @@ but only spending 10 minutes a day
 103. press S to search use feature in day98
 104. press A to add new row, feature in day83
 105. press D to delete a row, do feature from day100
+106. (csv cli app) add row number to the display table
+107. change color of column names
 
 - create a partial match search function
 - case insensitive search
