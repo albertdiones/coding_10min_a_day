@@ -112,15 +112,15 @@ but only spending 10 minutes a day
 104. press A to add new row, feature in day83
 105. press D to delete a row, do feature from day100
 106. case insensitive search
-
-
-
-create pretty print function
-107. add row number to the display table
+107. add row number to the display table (non absolute)
+108. absolute row number display (including on search result)
 108. change color of column names
 109. case insensitive search
 110. refactor the search to also include partial text matches
 
+refresh table using "clear screen" routine coded before
+responsive pretty print, adjust the columns according to the terminal size
+create pretty print function
 
 
 ------
