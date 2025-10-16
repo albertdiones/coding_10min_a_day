@@ -114,7 +114,7 @@ but only spending 10 minutes a day
 106. case insensitive search
 107. add row number to the display table (non absolute)
 108. absolute row number display (including on search result)
-108. change color of column names
+109. change color of column names
 109. case insensitive search
 110. refactor the search to also include partial text matches
 
