@@ -111,12 +111,14 @@ but only spending 10 minutes a day
 103. press S to search use feature in day98
 104. press A to add new row, feature in day83
 105. press D to delete a row, do feature from day100
-106. case insensitive search
-107. add row number to the display table (non absolute)
+106. refactor the search to also include partial text matches
 108. absolute row number display (including on search result)
 109. change color of column names
-109. case insensitive search
-110. refactor the search to also include partial text matches
+110. case insensitive search
+111. press 'u' to update
+112. terminal width responsive table
+113. when searching, highlight the row with color instead of printing it as separate
+114. cursor-like navigation using up and down, can use update or delete when a row is highlighted
 
 refresh table using "clear screen" routine coded before
 responsive pretty print, adjust the columns according to the terminal size
