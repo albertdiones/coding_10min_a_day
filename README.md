@@ -112,14 +112,16 @@ but only spending 10 minutes a day
 104. press A to add new row, feature in day83
 105. press D to delete a row, do feature from day100
 106. refactor the search to also include partial text matches
-108. absolute row number display (including on search result)
-109. change color of column names
-110. case insensitive search
-111. press 'u' to update a row, ask for a rowId, then ask for the field values
-112. terminal width responsive table (expanding to vacant space)
-113. when searching, highlight the row with color instead of printing it as separate
-114. cursor-like navigation using up and down, can use update or delete when a row is highlighted
-115. make the columns dynamic, so that create or update iterates through the csv columns instead of hardcoded
+107. absolute row number display (including on search result)
+108. change color of column names
+109. case insensitive search
+110. press 'u' to update a row, ask for a rowId, then ask for the field values
+111. terminal width responsive table (expanding to vacant space)
+112. when searching, highlight the row with color instead of printing it as separate
+114. cursor-like navigation using up and down highlights the selected row, print out the selected row's id
+115. using up/down navigation enable pressing d to delete the highlighted
+116. using up/down navigation enable pressing u the highlighted row
+114. make the columns dynamic, so that create or update iterates through the csv columns instead of hardcoded
 
 refresh table using "clear screen" routine coded before
 responsive pretty print, adjust the columns according to the terminal size
