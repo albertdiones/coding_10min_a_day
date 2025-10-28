@@ -120,7 +120,7 @@ but only spending 10 minutes a day
 112. when searching, highlight the row with color instead of printing it as separate
 114. cursor-like navigation using up and down highlights the selected row, print out the selected row's id
 115. using up/down navigation enable pressing d to delete the highlighted
-116. using up/down navigation enable pressing u the highlighted row
+116. using up/down navigation enable pressing u to update the highlighted row
 114. make the columns dynamic, so that create or update iterates through the csv columns instead of hardcoded
 
 refresh table using "clear screen" routine coded before
