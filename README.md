@@ -121,7 +121,8 @@ but only spending 10 minutes a day
 114. cursor-like navigation using up and down highlights the selected row, print out the selected row's id
 115. using up/down navigation enable pressing d to delete the highlighted
 116. using up/down navigation enable pressing u to update the highlighted row
-114. make the columns dynamic, so that create or update iterates through the csv columns instead of hardcoded
+117. make the columns dynamic, so that the update iterates through the csv columns instead of hardcoded columns
+118. make the columns dynamic, so that the create routine iterates through the csv columns instead of hardcoded columns
 
 refresh table using "clear screen" routine coded before
 responsive pretty print, adjust the columns according to the terminal size
