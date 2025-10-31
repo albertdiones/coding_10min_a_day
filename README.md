@@ -123,7 +123,7 @@ but only spending 10 minutes a day
 116. using up/down navigation enable pressing u to update the highlighted row
 117. make the columns dynamic, so that the update iterates through the csv columns instead of hardcoded columns
 118. make the columns dynamic, so that the create routine iterates through the csv columns instead of hardcoded columns
-119. refresh table using "clear screen" routine coded before
+119. refresh table using "clear screen" routine from previous code
 120. add new column feature when pressing "c"
 121. small screen responsive, truncating values on display when terminal is too narrow
 
