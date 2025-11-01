@@ -124,7 +124,7 @@ but only spending 10 minutes a day
 117. make the columns dynamic, so that the update iterates through the csv columns instead of hardcoded columns
 118. make the columns dynamic, so that the create routine iterates through the csv columns instead of hardcoded columns
 119. refresh table using "clear screen" routine from previous code
-120. add new column feature when pressing "c"
+120. press "c" to add new column to the csv
 121. small screen responsive, truncating values on display when terminal is too narrow
 
 
