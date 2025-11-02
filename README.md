@@ -124,7 +124,10 @@ but only spending 10 minutes a day
 117. make the columns dynamic, so that the update iterates through the csv columns instead of hardcoded columns
 118. make the columns dynamic, so that the create routine iterates through the csv columns instead of hardcoded columns
 119. refresh table using "clear screen" routine from previous code
-120. press "c" to add new column to the csv
+120. addColumn(columnName) a function that will add a new column to the csv
+121. press "c" to add new column to the csv
+122. deleteColumn(columnName) a function that will delete the specified columnName from the csv
+123. press "D" to delete a column
 121. small screen responsive, truncating values on display when terminal is too narrow
 
 
