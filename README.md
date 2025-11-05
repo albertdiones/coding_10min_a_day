@@ -128,7 +128,7 @@ but only spending 10 minutes a day
 121. press "c" to add new column to the csv
 122. deleteColumn(columnName) a function that will delete the specified columnName from the csv
 123. press "D" to delete a column
-121. small screen responsive, truncating values on display when terminal is too narrow
+124. small screen responsive, truncating values on display when terminal is too narrow
 
 
 backup/change history
