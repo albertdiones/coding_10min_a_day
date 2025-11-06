@@ -129,7 +129,7 @@ but only spending 10 minutes a day
 122. deleteColumn(columnName) a function that will delete the specified columnName from the csv
 123. press "D" to delete a column
 124. small screen responsive, truncating values on display when terminal is too narrow
-125. renameColumn(oldName, newName)
+125. new function:  renameColumn(oldName, newName) renames a column of the csv
 126. press "R" to rename a column
 127. press "C" to activate column selection
 128. use "C" navigation to rename column
