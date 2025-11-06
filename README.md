@@ -129,7 +129,15 @@ but only spending 10 minutes a day
 122. deleteColumn(columnName) a function that will delete the specified columnName from the csv
 123. press "D" to delete a column
 124. small screen responsive, truncating values on display when terminal is too narrow
-
+125. renameColumn(oldName, newName)
+126. press "R" to rename a column
+127. press "C" to activate column selection
+128. use "C" navigation to rename column
+129. use "C" navigation to delete column
+130. press "C" to select a column (left and right), then we can delete
+131. pagination: truncate table to only the first 15 rows
+132. pagination: show how many rows pages in total
+133. press right or left to move to next or previous page
 
 backup/change history
 responsive pretty print, adjust the olumns according to the terminal size
