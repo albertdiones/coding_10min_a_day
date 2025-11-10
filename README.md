@@ -132,12 +132,11 @@ but only spending 10 minutes a day
 125. new function:  renameColumn(oldName, newName) renames a column of the csv
 126. press "R" to rename a column
 127. press "C" to activate column selection
-128. use "C" navigation to rename column
-129. use "C" navigation to delete column
-130. press "C" to select a column (left and right), then we can delete
-131. pagination: truncate table to only the first 15 rows
-132. pagination: show how many rows pages in total
-133. press right or left to move to next or previous page
+128. navigation(Press C then left/right) for renaming column
+129. navigation(Press C then left/right) for deleting column
+130. pagination: truncate table to only the first 15 rows
+131. pagination: show how many rows pages in total
+132. press right or left to move to next or previous page
 
 backup/change history
 responsive pretty print, adjust the olumns according to the terminal size
