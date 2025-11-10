@@ -411,7 +411,7 @@ void PrettyPrintRows(
             {
                 ConsoleWriteWithColor(
                     cellDisplay,
-                    ConsoleColor.Blue
+                    ConsoleColor.Cyan
                 );
             }
             else if (rowId == 0)
@@ -582,16 +582,12 @@ void DeleteColumn(string columnName)
     }
 }
 
-void DeleteColumnRoutine()
+void DeleteColumnRoutine(string selectedColumnName)
 {
-    Console.WriteLine(
-        "Please input the name of the column to delete"
-    );
-    string columnNameInput = Console.ReadLine();
 
     Console.WriteLine(
         "Are you sure you want to delete this column? "
-        + columnNameInput
+        + selectedColumnName
     );
     string confirmationInput = Console.ReadLine();
 
@@ -602,7 +598,7 @@ void DeleteColumnRoutine()
 
     if (confirmed)
     {
-        DeleteColumn(columnNameInput);
+        DeleteColumn(selectedColumnName);
         Console.WriteLine("Successfully Deleted Column");
     }
     else
@@ -670,7 +666,6 @@ while (true)
         Console.Write("  [U] Update selected row");
         Console.Write("  [c] Add new column");
         Console.Write("  [Del] Delete selected row");
-        Console.Write("  [D] Delete column");
         Console.Write("  [Esc] Exit program \n");
     }
     else
@@ -722,14 +717,6 @@ while (true)
         continue;
     }
 
-
-
-    if (keyInfo.KeyChar == 'D')
-    {
-        DeleteColumnRoutine();
-        continue;
-    }
-
     
     if (keyInfo.KeyChar == 'C')
     {
@@ -758,7 +745,9 @@ while (true)
 
 
 
-    if (selectedColumnIndex != null && columnSelectionMode) {
+    // column navigation mode
+    if (selectedColumnIndex != null && columnSelectionMode)
+    {
         if (keyInfo.Key == ConsoleKey.LeftArrow)
         {
             selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
@@ -780,10 +769,19 @@ while (true)
             continue;
         }
 
+        
+
+        if (keyInfo.KeyChar == 'D')
+        {
+            DeleteColumnRoutine(rows[0][selectedColumnIndex.Value]);
+            continue;
+        }
+
+
         if (keyInfo.Key == ConsoleKey.Escape)
         {
             columnSelectionMode = false;
-            selectedColumnIndex = null  ;
+            selectedColumnIndex = null;
             continue;
         }
     }
