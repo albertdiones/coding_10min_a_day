@@ -384,7 +384,9 @@ void PrettyPrintRows(
             {
                 Console.Write(
                     rowId == 0
-                    ? "#|"
+                    ? "# |"
+                    : rowId < 10
+                    ? rowId + " |"
                     : rowId + "|"
                 );
             }
@@ -645,7 +647,10 @@ bool columnSelectionMode = false;
 while (true)
 {
 
-    string[][] rows = ReadAllCsvRow().ToArray();
+    string[][] rows = ReadAllCsvRow().Take(15).ToArray();
+
+    
+    // string[][] viewRows = rows.Take(15).ToArray();
 
 
     Console.Clear();
