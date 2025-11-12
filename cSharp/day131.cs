@@ -644,12 +644,19 @@ bool columnSelectionMode = false;
 
 //renameColumn("xxxxxx", "FullName");
 
+int perPage = 15;
+
 while (true)
 {
 
-    string[][] rows = ReadAllCsvRow().Take(15).ToArray();
+    string[][] allRows = ReadAllCsvRow().ToArray();
 
-    
+    //string[] columns = allRows[0];
+    int numRows = allRows.Length - 1;
+
+    string[][] rows = allRows.Take(perPage).ToArray();
+
+
     // string[][] viewRows = rows.Take(15).ToArray();
 
 
@@ -661,6 +668,10 @@ while (true)
         selectedColumnIndex,
         true
     );
+
+    int maxPages = (int)Math.Ceiling((double)numRows / perPage);
+
+    Console.WriteLine("Page 1/" + maxPages + " (" + numRows + " total)");
 
     Console.Write("Options:");
 
@@ -722,7 +733,7 @@ while (true)
         continue;
     }
 
-    
+
     if (keyInfo.KeyChar == 'C')
     {
         columnSelectionMode = true;
@@ -774,7 +785,7 @@ while (true)
             continue;
         }
 
-        
+
 
         if (keyInfo.KeyChar == 'D')
         {
