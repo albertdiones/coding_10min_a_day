@@ -618,7 +618,7 @@ void renameColumn(string oldName, string newName)
 void RenameColumnRoutine(string selectedColumnName)
 {
 
-    Console.WriteLine("Input the new name of the column "+selectedColumnName);
+    Console.WriteLine("Input the new name of the column " + selectedColumnName);
 
     string newColumnNameInput = Console.ReadLine();
 
@@ -630,6 +630,19 @@ void RenameColumnRoutine(string selectedColumnName)
     }
 
     renameColumn(selectedColumnName, newColumnNameInput);
+}
+
+string[][] sortRows(string[][] rows, string columnName)
+{
+    int columnNumber = GetCsvColumnNumber(columnName);
+    int columnIndex = columnNumber - 1;
+
+    string[][] actualRows = rows
+        .Skip(1) // skip header
+        .OrderBy(r => r[columnIndex], StringComparer.OrdinalIgnoreCase)
+        .ToArray();
+
+    return (new[] { rows[0] }).Concat(actualRows).ToArray();
 }
 
 
@@ -651,9 +664,12 @@ int page = 1;
 while (true)
 {
 
-    
+
 
     string[][] allRows = ReadAllCsvRow().ToArray();
+
+
+    allRows = sortRows(allRows, "Name");
 
     string[] columns = allRows[0];
     int numRows = allRows.Length - 1;
