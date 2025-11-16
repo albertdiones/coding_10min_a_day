@@ -137,8 +137,8 @@ but only spending 10 minutes a day
 130. pagination: truncate table to only show the first 15 rows
 131. pagination: show how many rows/pages in total
 132. press pagedown or pageup to move to next or previous page
-133. sortColumn(columnName) sorts rows array according to column specified, ascending alphabethical
-134. sortColumn(columnName, false) - new argument to allow descending sort
+133. sortColumn(rows, columnName) sorts rows array according to column specified, ascending alphabethical
+134. sortColumn(rows, columnName, false) - new argument to allow descending sort
 135. when in column navigation, press up or down to sort rows descending or ascending order
 
 backup/change history

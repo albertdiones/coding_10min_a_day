@@ -634,15 +634,33 @@ void RenameColumnRoutine(string selectedColumnName)
     renameColumn(selectedColumnName, newColumnNameInput);
 }
 
-string[][] sortRows(string[][] rows, string columnName)
+string[][] sortRows(string[][] rows, string columnName, bool isAscending = true)
 {
     int columnNumber = GetCsvColumnNumber(columnName);
     int columnIndex = columnNumber - 1;
 
-    string[][] actualRows = rows
+    IOrderedEnumerable<string[]> rowsEnum;
+    string[][] actualRows;
+
+    if (isAscending == false)
+    {
+        actualRows = rows
         .Skip(1) // skip header
-        .OrderBy(r => r[columnIndex], StringComparer.OrdinalIgnoreCase)
-        .ToArray();
+        .OrderBy(
+            r =>
+                r[columnIndex], StringComparer.OrdinalIgnoreCase
+        ).Reverse().ToArray();
+    }
+    else
+    {
+        actualRows = rows
+        .Skip(1) // skip header
+        .OrderBy(
+            r =>
+                r[columnIndex], StringComparer.OrdinalIgnoreCase
+        ).ToArray();
+    }
+
 
     return (new[] { rows[0] }).Concat(actualRows).ToArray();
 }
@@ -671,7 +689,7 @@ while (true)
     string[][] allRows = ReadAllCsvRow().ToArray();
 
 
-    allRows = sortRows(allRows, "Name");
+    allRows = sortRows(allRows, "Name", false);
 
     string[] columns = allRows[0];
     int numRows = allRows.Length - 1;
