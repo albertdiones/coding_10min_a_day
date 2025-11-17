@@ -681,6 +681,10 @@ bool columnSelectionMode = false;
 int perPage = 15;
 int page = 1;
 
+
+bool? sortAscending = null;
+
+
 while (true)
 {
 
@@ -689,7 +693,17 @@ while (true)
     string[][] allRows = ReadAllCsvRow().ToArray();
 
 
-    allRows = sortRows(allRows, "Name", false);
+    if (sortAscending != null) {
+        if (sortAscending.Value)
+        {
+            allRows = sortRows(allRows, "Name", true);
+        }
+        else
+        {
+
+            allRows = sortRows(allRows, "Name", false);
+        }
+    }
 
     string[] columns = allRows[0];
     int numRows = allRows.Length - 1;
@@ -783,45 +797,9 @@ while (true)
     {
         columnSelectionMode = true;
         selectedColumnIndex = 0;
+        selectedRowId = 0;
         continue;
     }
-
-
-
-    if (keyInfo.Key == ConsoleKey.UpArrow)
-    {
-        selectedRowId = Math.Max(0, selectedRowId - 1);
-        continue;
-    }
-
-    if (keyInfo.Key == ConsoleKey.DownArrow)
-    {
-        selectedRowId = Math.Min(
-            rows.Length - 1,
-            selectedRowId + 1
-        );
-        continue;
-    }
-
-
-
-    if (keyInfo.Key == ConsoleKey.PageUp)
-    {
-        page = Math.Max(1, page - 1);
-        continue;
-    }
-
-    if (keyInfo.Key == ConsoleKey.PageDown)
-    {
-        page = Math.Min(
-            maxPages,
-            page + 1
-        );
-        continue;
-    }
-
-
-
 
     // column navigation mode
     if (selectedColumnIndex != null && columnSelectionMode)
@@ -860,6 +838,73 @@ while (true)
         {
             columnSelectionMode = false;
             selectedColumnIndex = null;
+            continue;
+        }
+
+        
+        if (keyInfo.Key == ConsoleKey.UpArrow)
+        {
+            if (sortAscending == null)
+            {
+                sortAscending = false;
+            }
+            else if (sortAscending.Value == true)
+            {
+                sortAscending = null;
+            }
+            else
+            {
+                sortAscending = true;
+            }
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.DownArrow)
+        {
+            if (sortAscending == null) {
+                sortAscending = true;
+            }
+            else if (sortAscending.Value == true)
+            {
+                sortAscending = false;
+            }
+            else {
+                sortAscending = null;
+            }
+            continue;
+        }
+    }
+    else
+    {
+        if (keyInfo.Key == ConsoleKey.UpArrow)
+        {
+            selectedRowId = Math.Max(0, selectedRowId - 1);
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.DownArrow)
+        {
+            selectedRowId = Math.Min(
+                rows.Length - 1,
+                selectedRowId + 1
+            );
+            continue;
+        }
+
+
+
+        if (keyInfo.Key == ConsoleKey.PageUp)
+        {
+            page = Math.Max(1, page - 1);
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.PageDown)
+        {
+            page = Math.Min(
+                maxPages,
+                page + 1
+            );
             continue;
         }
     }
