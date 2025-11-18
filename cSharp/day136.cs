@@ -412,6 +412,18 @@ void PrettyPrintRows(
             if (
                 selectedColumnIndex != null
                 && selectedColumnIndex.Value == index
+                && selectedRowId == rowId
+            )
+            {
+                ConsoleWriteWithColor(
+                    cellDisplay,
+                    ConsoleColor.Yellow
+                );
+            }
+            else if (
+                selectedColumnIndex != null
+                && selectedColumnIndex.Value == index
+                && selectedRowId == 0
             )
             {
                 ConsoleWriteWithColor(
@@ -437,6 +449,7 @@ void PrettyPrintRows(
             }
             else if (
                 selectedRowId == rowId
+                && selectedColumnIndex == null
             )
             {
                 ConsoleWriteWithColor(
@@ -689,6 +702,13 @@ while (true)
 {
 
 
+    bool cellSelectionMode = selectedRowId != 0
+        && selectedColumnIndex != null;
+    bool rowSelectionMode = selectedRowId != 0
+        && selectedColumnIndex == null;
+    /*
+    bool columnSelectionMode = selectedRowId == 0
+        && selectedColumnIndex != null;*/
 
     string[][] allRows = ReadAllCsvRow().ToArray();
 
@@ -778,21 +798,6 @@ while (true)
     }
 
 
-
-    if (keyInfo.KeyChar == 'u')
-    {
-        UpdateRowRoutine(selectedRowId);
-        continue;
-    }
-
-
-    if (keyInfo.Key == ConsoleKey.Delete)
-    {
-        DeleteRowRoutine(selectedRowId);
-        continue;
-    }
-
-
     if (keyInfo.KeyChar == 'C')
     {
         columnSelectionMode = true;
@@ -801,6 +806,10 @@ while (true)
         continue;
     }
 
+    if (cellSelectionMode)
+    {
+     //   
+    }
     // column navigation mode
     if (selectedColumnIndex != null && columnSelectionMode)
     {
@@ -841,7 +850,7 @@ while (true)
             continue;
         }
 
-        
+
         if (keyInfo.Key == ConsoleKey.UpArrow)
         {
             if (sortAscending == null)
@@ -861,15 +870,85 @@ while (true)
 
         if (keyInfo.Key == ConsoleKey.DownArrow)
         {
-            if (sortAscending == null) {
+            if (sortAscending == null)
+            {
                 sortAscending = true;
             }
             else if (sortAscending.Value == true)
             {
                 sortAscending = false;
             }
-            else {
+            else
+            {
                 sortAscending = null;
+            }
+            continue;
+        }
+    }
+    else if (rowSelectionMode)
+    {
+
+        if (keyInfo.KeyChar == 'u')
+        {
+            UpdateRowRoutine(selectedRowId);
+            continue;
+        }
+        
+        
+        if (keyInfo.Key == ConsoleKey.UpArrow)
+        {
+            selectedRowId = Math.Max(0, selectedRowId - 1);
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.DownArrow)
+        {
+            selectedRowId = Math.Min(
+                rows.Length - 1,
+                selectedRowId + 1
+            );
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.Escape)
+        {
+            selectedRowId = 0;
+            continue;
+        }
+
+
+
+        if (keyInfo.Key == ConsoleKey.Delete)
+        {
+            DeleteRowRoutine(selectedRowId);
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.LeftArrow)
+        {
+            columnSelectionMode = true;
+            if (selectedColumnIndex == null)
+            {
+                selectedColumnIndex = 1;
+            }
+            else {
+                selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
+            }
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.RightArrow)
+        {
+            columnSelectionMode = true;
+            if (selectedColumnIndex == null)
+            {
+                selectedColumnIndex = 1;
+            }
+            else {
+                selectedColumnIndex = Math.Min(
+                    rows[0].Length - 1,
+                    selectedColumnIndex.Value + 1
+                );
             }
             continue;
         }
