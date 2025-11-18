@@ -811,7 +811,7 @@ while (true)
      //   
     }
     // column navigation mode
-    if (selectedColumnIndex != null && columnSelectionMode)
+    else if (selectedColumnIndex != null && columnSelectionMode)
     {
         if (keyInfo.Key == ConsoleKey.LeftArrow)
         {
