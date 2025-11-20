@@ -688,6 +688,8 @@ int? selectedColumnIndex = null;
 
 bool columnSelectionMode = false;
 
+string selectedColumnName = "";
+
 
 //renameColumn("xxxxxx", "FullName");
 
@@ -806,9 +808,47 @@ while (true)
         continue;
     }
 
+    if (selectedColumnIndex != null && columnSelectionMode)
+    {
+        selectedColumnName = rows[0][selectedColumnIndex.Value];
+    }
     if (cellSelectionMode)
     {
-     //   
+         if (keyInfo.Key == ConsoleKey.Delete)
+        {
+            UpdateCsvRow(selectedRowId, selectedColumnName, "");
+            continue;
+        }
+        if (keyInfo.Key == ConsoleKey.UpArrow)
+        {
+            selectedRowId = Math.Max(0, selectedRowId - 1);
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.DownArrow)
+        {
+            selectedRowId = Math.Min(
+                rows.Length - 1,
+                selectedRowId + 1
+            );
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.LeftArrow)
+        {
+            selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.RightArrow)
+        {
+            selectedColumnIndex = Math.Min(
+                rows[0].Length - 1,
+                selectedColumnIndex.Value + 1
+            );
+            continue;
+        }
+
     }
     // column navigation mode
     else if (selectedColumnIndex != null && columnSelectionMode)
@@ -847,6 +887,7 @@ while (true)
         {
             columnSelectionMode = false;
             selectedColumnIndex = null;
+            selectedColumnName = "";
             continue;
         }
 
@@ -953,6 +994,7 @@ while (true)
             continue;
         }
     }
+    // default mode
     else
     {
         if (keyInfo.Key == ConsoleKey.UpArrow)
