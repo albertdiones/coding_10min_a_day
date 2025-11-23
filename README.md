@@ -142,8 +142,8 @@ but only spending 10 minutes a day
 135. when in column navigation, press up or down to sort rows descending or ascending order
 136. cell selection mode - activated by pressing left or right while in row selection
 137. cell selection mode - delete cell value when delete is pressed
-137. cell selection mode - enable editing for cell value when typing in cell selection
-138. pagination - roll one row when pressing arrow down on the last display row
+138. cell selection mode - edit for cell value when you type
+139. pagination - roll one row when pressing arrow down on the last display row
 
 backup/change history
 

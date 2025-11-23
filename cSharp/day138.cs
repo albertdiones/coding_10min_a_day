@@ -778,36 +778,6 @@ while (true)
     ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
 
 
-    if (keyInfo.KeyChar == 's')
-    {
-        highlightRowIds = searchRowIdsRoutine();
-        continue;
-    }
-
-    highlightRowIds = new List<int>();
-
-
-    if (keyInfo.KeyChar == 'a')
-    {
-        CreateRowRoutine();
-        continue;
-    }
-
-    if (keyInfo.KeyChar == 'c')
-    {
-        AddNewColumnRoutine();
-        continue;
-    }
-
-
-    if (keyInfo.KeyChar == 'C')
-    {
-        columnSelectionMode = true;
-        selectedColumnIndex = 0;
-        selectedRowId = 0;
-        continue;
-    }
-
     if (selectedColumnIndex != null && columnSelectionMode)
     {
         selectedColumnName = rows[0][selectedColumnIndex.Value];
@@ -848,6 +818,16 @@ while (true)
             );
             continue;
         }
+
+        
+        string cellValue = rows[selectedRowId][selectedColumnIndex.Value];
+
+
+        UpdateCsvRow(
+            selectedRowId,
+            selectedColumnName,
+            cellValue + keyInfo.KeyChar
+        );
 
     }
     // column navigation mode
@@ -997,6 +977,35 @@ while (true)
     // default mode
     else
     {
+        if (keyInfo.KeyChar == 's')
+        {
+            highlightRowIds = searchRowIdsRoutine();
+            continue;
+        }
+
+        highlightRowIds = new List<int>();
+
+
+        if (keyInfo.KeyChar == 'a')
+        {
+            CreateRowRoutine();
+            continue;
+        }
+
+        if (keyInfo.KeyChar == 'c')
+        {
+            AddNewColumnRoutine();
+            continue;
+        }
+
+
+        if (keyInfo.KeyChar == 'C')
+        {
+            columnSelectionMode = true;
+            selectedColumnIndex = 0;
+            selectedRowId = 0;
+            continue;
+        }
         if (keyInfo.Key == ConsoleKey.UpArrow)
         {
             selectedRowId = Math.Max(0, selectedRowId - 1);
