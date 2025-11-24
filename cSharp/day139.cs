@@ -822,6 +822,38 @@ while (true)
         
         string cellValue = rows[selectedRowId][selectedColumnIndex.Value];
 
+        
+
+        if (keyInfo.Key == ConsoleKey.Backspace)
+        {
+            int newLength = cellValue.Length - 1;
+            cellValue = cellValue.Substring(0, newLength);
+            
+            UpdateCsvRow(
+                selectedRowId,
+                selectedColumnName,
+                cellValue
+            );
+            continue;
+        }
+
+        
+
+        if (keyInfo.Key == ConsoleKey.Escape)
+        {
+            selectedColumnIndex = null;
+            selectedColumnName = null;
+            cellSelectionMode = false;
+            continue;
+        }
+
+
+        // new tech debt, doesn't work
+        if (keyInfo.KeyChar == null)
+        {
+            continue;
+        }
+
 
         UpdateCsvRow(
             selectedRowId,
@@ -971,6 +1003,29 @@ while (true)
                     selectedColumnIndex.Value + 1
                 );
             }
+            continue;
+        }
+
+        
+
+        if (keyInfo.Key == ConsoleKey.PageUp)
+        {
+            page = Math.Max(1, page - 1);
+            selectedRowId = 0;
+            rowSelectionMode = false;
+            continue;
+        }
+
+        if (keyInfo.Key == ConsoleKey.PageDown)
+        {
+            page = Math.Min(
+                maxPages,
+                page + 1
+            );
+            
+            selectedRowId = 0;
+            rowSelectionMode = false;
+
             continue;
         }
     }
