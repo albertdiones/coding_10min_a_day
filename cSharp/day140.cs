@@ -695,6 +695,7 @@ string selectedColumnName = "";
 
 int perPage = 15;
 int page = 1;
+int pageOffset = 0;
 
 
 bool? sortAscending = null;
@@ -729,8 +730,8 @@ while (true)
 
     string[] columns = allRows[0];
     int numRows = allRows.Length - 1;
-
-    int rowNumberOffset = ((page - 1) * 15);
+    
+    int rowNumberOffset = pageOffset + ((page - 1) * 15);
 
     string[][] pageRows = allRows
         .Skip(1 + rowNumberOffset)
@@ -956,10 +957,17 @@ while (true)
 
         if (keyInfo.Key == ConsoleKey.DownArrow)
         {
-            selectedRowId = Math.Min(
-                rows.Length - 1,
-                selectedRowId + 1
-            );
+
+            int targetRowId = selectedRowId + 1;
+
+            if (targetRowId >= selectedRowId + 1)
+            {
+                targetRowId = rows.Length - 1;
+                pageOffset++;
+            }
+            selectedRowId = targetRowId;
+
+
             continue;
         }
 

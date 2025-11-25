@@ -144,7 +144,11 @@ but only spending 10 minutes a day
 137. cell selection mode - delete cell value when delete is pressed
 138. cell selection mode - edit for cell value when you type
 139. cell selection mode - backspace
-140. pagination - roll one row when pressing arrow down on the last display row
+140. pagination - roll one row when pressing arrow down on the last displayed row
+141. pagination - roll one row when pressing arrow up on the first displayed row
+
+# save backup to temp folder before updating or before clearing the whole file
+# when pressing ctrl Z, restore latest backup
 
 backup/change history
 
