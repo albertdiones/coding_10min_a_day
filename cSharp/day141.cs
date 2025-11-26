@@ -59,6 +59,11 @@ static List<string[]> ReadAllCsvRow()
     var rows = new List<string[]>(numRows);
     for (int x = 0; x < numRows; x++)
     {
+        /*
+        var row = ReadCsvRow(x);
+        var newRow = new[] { x.ToString() }.Concat(row).ToArray();
+        rows.Add(newRow);
+        */
         rows.Add(ReadCsvRow(x));
     }
     return rows;
@@ -951,7 +956,14 @@ while (true)
         
         if (keyInfo.Key == ConsoleKey.UpArrow)
         {
-            selectedRowId = Math.Max(0, selectedRowId - 1);
+            int targetRowId = selectedRowId - 1;
+
+            if (targetRowId <= 0)
+            {
+                targetRowId = 1;
+                pageOffset = Math.Max(0, pageOffset - 1);
+            }
+            selectedRowId = targetRowId;
             continue;
         }
 
@@ -960,10 +972,10 @@ while (true)
 
             int targetRowId = selectedRowId + 1;
 
-            if (targetRowId >= selectedRowId + 1)
+            if (targetRowId >= rows.Length)
             {
                 targetRowId = rows.Length - 1;
-                pageOffset++;
+                pageOffset = Math.Min(allRows.Length - perPage, pageOffset + 1);
             }
             selectedRowId = targetRowId;
 
