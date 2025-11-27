@@ -59,10 +59,17 @@ static List<string[]> ReadAllCsvRow()
     var rows = new List<string[]>(numRows);
     for (int x = 0; x < numRows; x++)
     {
-        /*
+        /*        
         var row = ReadCsvRow(x);
         var newRow = new[] { x.ToString() }.Concat(row).ToArray();
+        if (x == 0)
+        {
+            var row = ReadCsvRow(x);
+            var newRow = new[] { "#" }.Concat(row).ToArray();
+            
+        }
         rows.Add(newRow);
+        rows.Add(ReadCsvRow(x));
         */
         rows.Add(ReadCsvRow(x));
     }
@@ -845,8 +852,10 @@ while (true)
 
         
 
-        if (keyInfo.Key == ConsoleKey.Escape)
-        {
+        if (
+            keyInfo.Key == ConsoleKey.Escape
+            || keyInfo.Key == ConsoleKey.Enter
+        ) {
             selectedColumnIndex = null;
             selectedColumnName = null;
             cellSelectionMode = false;
@@ -1002,7 +1011,7 @@ while (true)
             columnSelectionMode = true;
             if (selectedColumnIndex == null)
             {
-                selectedColumnIndex = 1;
+                selectedColumnIndex = 0;
             }
             else {
                 selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
