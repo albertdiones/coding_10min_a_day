@@ -146,6 +146,12 @@ but only spending 10 minutes a day
 139. cell selection mode - backspace
 140. pagination - roll one row when pressing arrow down on the last displayed row
 141. pagination - roll one row when pressing arrow up on the first displayed row
+142. cell selection mode - press enter to exit, then go to row selection mode
+143. row selection mode - press I to insert a blank row above
+144. row selection mode - press c - mark the row as copied
+145. row selection mode - ctrl v - when a row is copied, paste the copied row as new row above the selection
+146. row selection mode - ctrl x - mark the row as cut, when pasted, delete the source row
+
 
 # save backup to temp folder before updating or before clearing the whole file
 # when pressing ctrl Z, restore latest backup
