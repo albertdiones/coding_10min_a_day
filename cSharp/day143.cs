@@ -962,6 +962,37 @@ while (true)
             continue;
         }
         
+
+        if (keyInfo.KeyChar == 'I')
+        {
+            allRows = ReadAllCsvRow().ToArray();
+            string[][] newAllRows = new string[allRows.Length + 1][];
+
+            // Copy elements before index
+            Array.Copy(allRows, 0, newAllRows, 0, selectedRowId);
+
+            // Insert the new value
+            newAllRows[selectedRowId] = new string[]{"",""};
+
+            // Copy the rest (shifted by 1)
+            Array.Copy(
+                allRows,
+                 selectedRowId,
+                  newAllRows,
+                   selectedRowId + 1,
+                    allRows.Length - selectedRowId
+            );
+
+
+            SetCsvToBlank();
+            foreach (var row in newAllRows)
+            {
+                AddToCsv(row);
+            }            
+
+            continue;
+        }
+        
         
         if (keyInfo.Key == ConsoleKey.UpArrow)
         {
