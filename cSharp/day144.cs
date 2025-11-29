@@ -712,6 +712,8 @@ int pageOffset = 0;
 
 bool? sortAscending = null;
 
+string[] clipboardRow = [];
+
 
 while (true)
 {
@@ -786,6 +788,10 @@ while (true)
     if (selectedRowId != 0)
     {
         Console.WriteLine("Selected Row: " + selectedRowId);
+    }
+    if (clipboardRow != null)
+    {
+        Console.WriteLine("Copied Row: " + string.Join(",", clipboardRow));
     }
 
     ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
@@ -1086,6 +1092,16 @@ while (true)
             selectedRowId = 0;
             rowSelectionMode = false;
 
+            continue;
+        }
+
+        
+
+        if (keyInfo.KeyChar == 'C' 
+            && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
+        )
+        {
+            clipboardRow = allRows[selectedRowId];
             continue;
         }
     }
