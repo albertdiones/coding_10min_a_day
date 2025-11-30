@@ -148,8 +148,8 @@ but only spending 10 minutes a day
 141. pagination - roll one row when pressing arrow up on the first displayed row
 142. cell selection mode - press enter to exit, then go to row selection mode
 143. row selection mode - press I to insert a blank row above
-144. row selection mode - press ctrl c - marks the row as copied
-145. row selection mode - ctrl v - when a row is copied, paste the copied row as new row above the selection
+144. row selection mode - press shift c - marks the row as copied
+145. row selection mode - shift v - when a row is copied, paste the copied row as new row above the selection
 146. row selection mode - ctrl x - mark the row as cut, when pasted, delete the source row
 147. auto refresh every after 10 seconds with no interaction
 

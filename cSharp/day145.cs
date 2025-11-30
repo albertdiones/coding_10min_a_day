@@ -1104,6 +1104,51 @@ while (true)
             clipboardRow = allRows[selectedRowId];
             continue;
         }
+
+        
+
+        if (
+            clipboardRow.Length > 0 &&
+            keyInfo.KeyChar == 'V' 
+            && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
+        )
+        {
+            allRows = ReadAllCsvRow().ToArray();
+            string[][] newAllRows = new string[allRows.Length + 1][];
+
+            // Copy elements before index
+            Array.Copy(allRows, 0, newAllRows, 0, selectedRowId);
+
+            // Insert the new value
+            newAllRows[selectedRowId] = new string[]{"",""};
+
+            // Copy the rest (shifted by 1)
+            Array.Copy(
+                allRows,
+                 selectedRowId,
+                  newAllRows,
+                   selectedRowId + 1,
+                    allRows.Length - selectedRowId
+            );
+
+
+            SetCsvToBlank();
+            foreach (var row in newAllRows)
+            {
+                AddToCsv(row);
+            }
+
+            
+            for (
+                int y = 0;
+                y < columns.Length;
+                y++
+            ) {
+                UpdateCsvRow(selectedRowId, columns[y], clipboardRow[y]);
+            }
+            
+            continue;
+        }
     }
     // default mode
     else
