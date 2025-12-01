@@ -713,6 +713,7 @@ int pageOffset = 0;
 bool? sortAscending = null;
 
 string[] clipboardRow = [];
+int? deleteRowWhenPasted = null;
 
 
 while (true)
@@ -1102,8 +1103,21 @@ while (true)
         )
         {
             clipboardRow = allRows[selectedRowId];
+            deleteRowWhenPasted = null;
             continue;
         }
+
+        
+
+        if (keyInfo.KeyChar == 'X' 
+            && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
+        )
+        {
+            clipboardRow = allRows[selectedRowId];
+            deleteRowWhenPasted = selectedRowId;
+            continue;
+        }
+
 
         
 
@@ -1113,6 +1127,17 @@ while (true)
             && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
         )
         {
+
+            if (deleteRowWhenPasted != null)
+            {
+                DeleteCsvRow(deleteRowWhenPasted.Value);
+                
+                if (selectedRowId > deleteRowWhenPasted.Value)
+                {
+                    selectedRowId--;
+                }
+            }
+
             allRows = ReadAllCsvRow().ToArray();
             string[][] newAllRows = new string[allRows.Length + 1][];
 
