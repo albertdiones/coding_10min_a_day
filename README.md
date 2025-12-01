@@ -150,8 +150,9 @@ but only spending 10 minutes a day
 143. row selection mode - press I to insert a blank row above
 144. row selection mode - press shift c - marks the row as copied
 145. row selection mode - shift v - when a row is copied, paste the copied row as new row above the selection
-146. row selection mode - ctrl x - mark the row as cut, when pasted, delete the source row
+146. row selection mode - shift x - mark the row as cut, when pasted, delete the source row
 147. auto refresh every after 10 seconds with no interaction
+148. CTRL + F to search
 
 # catch the tab on cell selection edit mode, move to the next cell
 
