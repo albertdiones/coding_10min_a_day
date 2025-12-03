@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
+using System.Threading;
 
 const string DbFile = "__db.csv";
 
@@ -795,7 +796,24 @@ while (true)
         Console.WriteLine("Copied Row: " + string.Join(",", clipboardRow));
     }
 
-    ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
+    DateTime start = DateTime.Now;
+    ConsoleKeyInfo keyInfo = default;
+    bool keyPressed = false;
+    while ((DateTime.Now - start).TotalSeconds < 2)
+    {
+        if (Console.KeyAvailable)
+        {
+            keyInfo = Console.ReadKey(intercept: true);
+            keyPressed = true;
+            break;
+        }
+        Thread.Sleep(30);
+    }
+
+    if (!keyPressed)
+    {
+        continue;
+    }
 
 
     if (selectedColumnIndex != null && columnSelectionMode)
