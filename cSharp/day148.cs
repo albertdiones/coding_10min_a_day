@@ -106,9 +106,15 @@ static int[] SearchCsvRows(
     List<string[]> rows = ReadAllCsvRow();
 
     int columnNumber = GetCsvColumnNumber(columnName);
-    int columnIndex = columnNumber - 1;
 
     Stack<int> result = new Stack<int>();
+
+    if (columnNumber == -1)
+    {
+        return result.ToArray();
+    }
+
+    int columnIndex = columnNumber - 1;
 
     for (int x = 1; x < rows.Count; x++)
     {
@@ -195,13 +201,12 @@ void SearchRoutine()
 
     string query1 = Console.ReadLine();
 
-    int[] rowIds1 = SearchCsvRows("FirstName", query1, true, true);
-    int[] rowIds2 = SearchCsvRows("LastName", query1, true, true);
+    int[] rowIds1 = SearchCsvRows("Name", query1, true, true);
     int[] rowIds3 = SearchCsvRows("Email", query1, true, true);
 
 
     //
-    int[] rowIds = rowIds1.Concat(rowIds2).Concat(rowIds3).ToArray();
+    int[] rowIds = rowIds1.Concat(rowIds3).ToArray();
 
     Console.WriteLine(rowIds.Length);
 
@@ -1196,7 +1201,15 @@ while (true)
     // default mode
     else
     {
-        if (keyInfo.KeyChar == 's')
+
+        if (
+            keyInfo.KeyChar == 's'
+            ||
+            (
+                (keyInfo.Key == ConsoleKey.F)
+                && ((keyInfo.Modifiers & ConsoleModifiers.Control) != 0)
+            )
+        )
         {
             highlightRowIds = searchRowIdsRoutine();
             continue;
