@@ -58,15 +58,21 @@ static List<string[]> ReadAllCsvRow()
     int numRows = GetCsvRowCount();;
 
     var rows = new List<string[]>(numRows);
-    var columns = ReadCsvRow(0);
-    columns = new[] { "#" }.Concat(columns).ToArray();
-    rows.Add(columns);
-
-    for (int x = 1; x < numRows; x++)
+    for (int x = 0; x < numRows; x++)
     {
+        /*        
         var row = ReadCsvRow(x);
         var newRow = new[] { x.ToString() }.Concat(row).ToArray();
+        if (x == 0)
+        {
+            var row = ReadCsvRow(x);
+            var newRow = new[] { "#" }.Concat(row).ToArray();
+            
+        }
         rows.Add(newRow);
+        rows.Add(ReadCsvRow(x));
+        */
+        rows.Add(ReadCsvRow(x));
     }
     return rows;
 }
@@ -397,7 +403,10 @@ void PrettyPrintRows(
 
             if (includeRowNumbers && index == 0)
             {
-                Console.Write(rowId < 10
+                Console.Write(
+                    rowId == 0
+                    ? "# |"
+                    : rowId < 10
                     ? (rowId + rowNumberOffset) + " |"
                     : (rowId + rowNumberOffset) + "|"
                 );
@@ -759,7 +768,7 @@ while (true)
         highlightRowIds.ToArray(),
         selectedRowId,
         selectedColumnIndex,
-        false,
+        true,
         rowNumberOffset
     );
 
@@ -838,21 +847,13 @@ while (true)
             continue;
         }
 
-        if (
-            keyInfo.Key == ConsoleKey.LeftArrow
-        )
+        if (keyInfo.Key == ConsoleKey.LeftArrow)
         {
             selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
             continue;
         }
 
-        if (
-            keyInfo.Key == ConsoleKey.RightArrow
-            ||
-            (
-               keyInfo.Key == ConsoleKey.Tab
-            )
-        )
+        if (keyInfo.Key == ConsoleKey.RightArrow)
         {
             selectedColumnIndex = Math.Min(
                 rows[0].Length - 1,
