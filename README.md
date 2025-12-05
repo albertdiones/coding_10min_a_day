@@ -153,6 +153,12 @@ but only spending 10 minutes a day
 146. row selection mode - shift x - mark the row as cut, when pasted, delete the source row
 147. auto refresh every after 2 seconds with no interaction
 148. CTRL + F to search
+149. cell seletion mode - tab to switch to next cell
+150. F2 to enter cell selection mode
+151. save backup to temp folder before SetCsvToBlank()
+152. ctrl Z restores latest backup
+153. allow multiple backups to exist per call of SetCSvToBlank()
+154. pressing ctrl Z twice restores, previous previous state
 
 # catch the tab on cell selection edit mode, move to the next cell
 

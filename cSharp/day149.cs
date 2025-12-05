@@ -403,10 +403,7 @@ void PrettyPrintRows(
 
             if (includeRowNumbers && index == 0)
             {
-                Console.Write(
-                    rowId == 0
-                    ? "# |"
-                    : rowId < 10
+                Console.Write(rowId < 10
                     ? (rowId + rowNumberOffset) + " |"
                     : (rowId + rowNumberOffset) + "|"
                 );
@@ -847,13 +844,21 @@ while (true)
             continue;
         }
 
-        if (keyInfo.Key == ConsoleKey.LeftArrow)
+        if (
+            keyInfo.Key == ConsoleKey.LeftArrow
+        )
         {
             selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
             continue;
         }
 
-        if (keyInfo.Key == ConsoleKey.RightArrow)
+        if (
+            keyInfo.Key == ConsoleKey.RightArrow
+            ||
+            (
+               keyInfo.Key == ConsoleKey.Tab
+            )
+        )
         {
             selectedColumnIndex = Math.Min(
                 rows[0].Length - 1,
