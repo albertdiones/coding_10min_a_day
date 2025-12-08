@@ -1072,6 +1072,14 @@ while (true)
             continue;
         }
 
+
+        if (keyInfo.Key == ConsoleKey.F2)
+        {
+            columnSelectionMode = true;
+            selectedColumnIndex = 0;
+            continue;
+        }
+
         if (keyInfo.Key == ConsoleKey.LeftArrow)
         {
             columnSelectionMode = true;
@@ -1206,6 +1214,19 @@ while (true)
     // default mode
     else
     {
+
+
+
+
+        if (keyInfo.Key == ConsoleKey.F2)
+        {
+            columnSelectionMode = true;
+            selectedColumnIndex = 0;
+            rowSelectionMode = true;
+            selectedRowId = 1;
+            continue;
+        }
+
 
         if (
             keyInfo.KeyChar == 's'
