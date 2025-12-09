@@ -158,8 +158,14 @@ void SetCsvToBlank()
 {
     string dbFile = "__db.csv";
 
+    string tmpDir = Path.GetTempPath();
+
+    string tmpFile = tmpDir + "/csv-cli-bak0.csv";
+
     try
     {
+        File.Copy(dbFile, tmpFile, true); 
+
         // Open or create the file, overwrite existing content (truncate)
         using (var fileStream = new FileStream(dbFile, FileMode.Create, FileAccess.Write))
         {
