@@ -257,13 +257,13 @@ void UpdateCsvRow(
 {
     var rows = ReadAllCsvRow();
     int columnNumber = GetCsvColumnNumber(columnName);
-    rows[rowId][columnNumber - 1] = value;
+    rows[rowId][columnNumber] = value;
 
     SetCsvToBlank();
 
     foreach (var row in rows)
     {
-        AddToCsv(row);
+        AddToCsv(row.Skip(1).ToArray());
     }
 }
 
@@ -697,7 +697,7 @@ string[][] sortRows(string[][] rows, string columnName, bool isAscending = true)
 
 List<int> highlightRowIds = new List<int>();
 
-int selectedRowId = 0;
+int selectedRowIndex = 0;
 
 int? selectedColumnIndex = null;
 
@@ -723,9 +723,9 @@ while (true)
 {
 
 
-    bool cellSelectionMode = selectedRowId != 0
+    bool cellSelectionMode = selectedRowIndex != 0
         && selectedColumnIndex != null;
-    bool rowSelectionMode = selectedRowId != 0
+    bool rowSelectionMode = selectedRowIndex != 0
         && selectedColumnIndex == null;
     /*
     bool columnSelectionMode = selectedRowId == 0
@@ -758,12 +758,14 @@ while (true)
 
     string[][] rows = (new[] { columns }).Concat(pageRows).ToArray();
 
+    int selectedRowId = selectedRowIndex == 0 ? 0 :int.Parse(rows[selectedRowIndex][0]);
+
 
     Console.Clear();
     PrettyPrintRows(
         rows,
         highlightRowIds.ToArray(),
-        selectedRowId,
+        selectedRowIndex,
         selectedColumnIndex,
         false,
         rowNumberOffset
@@ -789,9 +791,9 @@ while (true)
         Console.Write("  [R] rename column");
         Console.Write("  [Esc] Exit column selection\n");
     }
-    if (selectedRowId != 0)
+    if (selectedRowIndex != 0)
     {
-        Console.WriteLine("Selected Row: " + selectedRowId);
+        Console.WriteLine("Selected Row: " + selectedRowIndex);
     }
     if (clipboardRow != null)
     {
@@ -831,15 +833,15 @@ while (true)
         }
         if (keyInfo.Key == ConsoleKey.UpArrow)
         {
-            selectedRowId = Math.Max(0, selectedRowId - 1);
+            selectedRowIndex = Math.Max(0, selectedRowIndex - 1);
             continue;
         }
 
         if (keyInfo.Key == ConsoleKey.DownArrow)
         {
-            selectedRowId = Math.Min(
+            selectedRowIndex = Math.Min(
                 rows.Length - 1,
-                selectedRowId + 1
+                selectedRowIndex + 1
             );
             continue;
         }
@@ -868,7 +870,7 @@ while (true)
         }
 
         
-        string cellValue = rows[selectedRowId][selectedColumnIndex.Value];
+        string cellValue = rows[selectedRowIndex][selectedColumnIndex.Value];
 
         
 
@@ -1031,28 +1033,28 @@ while (true)
         
         if (keyInfo.Key == ConsoleKey.UpArrow)
         {
-            int targetRowId = selectedRowId - 1;
+            int targetRowId = selectedRowIndex - 1;
 
             if (targetRowId <= 0)
             {
                 targetRowId = 1;
                 pageOffset = Math.Max(0, pageOffset - 1);
             }
-            selectedRowId = targetRowId;
+            selectedRowIndex = targetRowId;
             continue;
         }
 
         if (keyInfo.Key == ConsoleKey.DownArrow)
         {
 
-            int targetRowId = selectedRowId + 1;
+            int targetRowId = selectedRowIndex + 1;
 
             if (targetRowId >= rows.Length)
             {
                 targetRowId = rows.Length - 1;
                 pageOffset = Math.Min(allRows.Length - perPage, pageOffset + 1);
             }
-            selectedRowId = targetRowId;
+            selectedRowIndex = targetRowId;
 
 
             continue;
@@ -1060,7 +1062,7 @@ while (true)
 
         if (keyInfo.Key == ConsoleKey.Escape)
         {
-            selectedRowId = 0;
+            selectedRowIndex = 0;
             continue;
         }
 
@@ -1069,7 +1071,7 @@ while (true)
         if (keyInfo.Key == ConsoleKey.Delete)
         {
             DeleteRowRoutine(
-                 int.Parse(rows[selectedRowId][0])
+                 selectedRowId
             );
             continue;
         }
@@ -1116,7 +1118,7 @@ while (true)
         if (keyInfo.Key == ConsoleKey.PageUp)
         {
             page = Math.Max(1, page - 1);
-            selectedRowId = 0;
+            selectedRowIndex = 0;
             rowSelectionMode = false;
             continue;
         }
@@ -1128,7 +1130,7 @@ while (true)
                 page + 1
             );
             
-            selectedRowId = 0;
+            selectedRowIndex = 0;
             rowSelectionMode = false;
 
             continue;
@@ -1140,7 +1142,7 @@ while (true)
             && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
         )
         {
-            clipboardRow = allRows[selectedRowId];
+            clipboardRow = allRows[selectedRowIndex];
             deleteRowWhenPasted = null;
             continue;
         }
@@ -1151,7 +1153,7 @@ while (true)
             && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
         )
         {
-            clipboardRow = allRows[selectedRowId];
+            clipboardRow = allRows[selectedRowIndex];
             deleteRowWhenPasted = selectedRowId;
             continue;
         }
@@ -1170,9 +1172,14 @@ while (true)
             {
                 DeleteCsvRow(deleteRowWhenPasted.Value);
                 
-                if (selectedRowId > deleteRowWhenPasted.Value)
+                // this is definitely bugged
+                // id vs index
+                // visibility wise, index matters, but we do not know what index is the id
+                // so lumalabas need din natin irecord yung index
+                // bale delete id, but check index
+                if (selectedRowIndex > deleteRowWhenPasted.Value)
                 {
-                    selectedRowId--;
+                    selectedRowIndex--;
                 }
             }
 
@@ -1225,7 +1232,7 @@ while (true)
             columnSelectionMode = true;
             selectedColumnIndex = 0;
             rowSelectionMode = true;
-            selectedRowId = 1;
+            selectedRowIndex = 1;
             continue;
         }
 
@@ -1263,20 +1270,20 @@ while (true)
         {
             columnSelectionMode = true;
             selectedColumnIndex = 0;
-            selectedRowId = 0;
+            selectedRowIndex = 0;
             continue;
         }
         if (keyInfo.Key == ConsoleKey.UpArrow)
         {
-            selectedRowId = Math.Max(0, selectedRowId - 1);
+            selectedRowIndex = Math.Max(0, selectedRowIndex - 1);
             continue;
         }
 
         if (keyInfo.Key == ConsoleKey.DownArrow)
         {
-            selectedRowId = Math.Min(
+            selectedRowIndex = Math.Min(
                 rows.Length - 1,
-                selectedRowId + 1
+                selectedRowIndex + 1
             );
             continue;
         }
