@@ -705,6 +705,12 @@ bool columnSelectionMode = false;
 
 string selectedColumnName = "";
 
+void resetSelectedColumnIndex()
+{
+    selectedColumnIndex = 1;
+    columnSelectionMode = true;
+}
+
 
 //renameColumn("xxxxxx", "FullName");
 
@@ -850,7 +856,7 @@ while (true)
             keyInfo.Key == ConsoleKey.LeftArrow
         )
         {
-            selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
+            selectedColumnIndex = Math.Max(1, selectedColumnIndex.Value - 1);
             continue;
         }
 
@@ -919,7 +925,7 @@ while (true)
     {
         if (keyInfo.Key == ConsoleKey.LeftArrow)
         {
-            selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
+            selectedColumnIndex = Math.Max(1, selectedColumnIndex.Value - 1);
             continue;
         }
 
@@ -1080,7 +1086,7 @@ while (true)
         if (keyInfo.Key == ConsoleKey.F2)
         {
             columnSelectionMode = true;
-            selectedColumnIndex = 0;
+            resetSelectedColumnIndex();
             continue;
         }
 
@@ -1089,10 +1095,10 @@ while (true)
             columnSelectionMode = true;
             if (selectedColumnIndex == null)
             {
-                selectedColumnIndex = 0;
+                resetSelectedColumnIndex();
             }
             else {
-                selectedColumnIndex = Math.Max(0, selectedColumnIndex.Value - 1);
+                selectedColumnIndex = Math.Max(1, selectedColumnIndex.Value - 1);
             }
             continue;
         }
@@ -1230,7 +1236,7 @@ while (true)
         if (keyInfo.Key == ConsoleKey.F2)
         {
             columnSelectionMode = true;
-            selectedColumnIndex = 0;
+            resetSelectedColumnIndex();
             rowSelectionMode = true;
             selectedRowIndex = 1;
             continue;
@@ -1269,7 +1275,7 @@ while (true)
         if (keyInfo.KeyChar == 'C')
         {
             columnSelectionMode = true;
-            selectedColumnIndex = 0;
+            resetSelectedColumnIndex();
             selectedRowIndex = 0;
             continue;
         }
@@ -1304,6 +1310,17 @@ while (true)
             );
             continue;
         }
+    }
+        
+
+    if (keyInfo.KeyChar == 'Z' 
+        && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
+    )
+    {
+        string tmpDir = Path.GetTempPath();
+        string tmpFile = tmpDir + "/csv-cli-bak0.csv";
+        File.Copy(tmpFile, "__db.csv", true); 
+        continue;
     }
 
     if (keyInfo.Key == ConsoleKey.Escape)
