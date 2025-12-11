@@ -153,18 +153,42 @@ static int? FindFirstCsvRow(string columnName, string value)
     }
     return null;
 }
+string currentVersionFileName = "__csv_cli.current_version.txt";
+int getCurrentVersion() {
+    if (!File.Exists(currentVersionFileName))
+    {
+        return 0;
+    }
+    return int.Parse(File.ReadAllText(currentVersionFileName));
+}
+
+int currentVersion = getCurrentVersion();
+
+string getBackupFilePath(int versionNumber)
+{
+
+    string tmpDir = Path.GetTempPath();
+
+    return  tmpDir + "/csv-cli-bak" + versionNumber + ".csv";
+}
+
+int backCurrentVersion()
+{
+    string dbFile = "__db.csv";
+    currentVersion++;
+    string tmpFile = getBackupFilePath(currentVersion);
+    File.Copy(dbFile, tmpFile); 
+    File.WriteAllText(currentVersionFileName, currentVersion.ToString());
+    return currentVersion;
+}
 
 void SetCsvToBlank()
 {
     string dbFile = "__db.csv";
 
-    string tmpDir = Path.GetTempPath();
-
-    string tmpFile = tmpDir + "/csv-cli-bak0.csv";
-
     try
     {
-        File.Copy(dbFile, tmpFile, true); 
+        backCurrentVersion();
 
         // Open or create the file, overwrite existing content (truncate)
         using (var fileStream = new FileStream(dbFile, FileMode.Create, FileAccess.Write))

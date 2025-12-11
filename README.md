@@ -157,7 +157,7 @@ but only spending 10 minutes a day
 150. F2 to enter cell selection mode
 151. save backup to temp folder before updating csv (before SetCsvToBlank())
 152. ctrl z(or shift z) restores latest backup
-153. allow multiple backups to exist per call of SetCSvToBlank()
+153. separate backup file per change (per call of SetCSvToBlank())
 154. pressing ctrl Z twice restores, previous previous state
 
 # catch the tab on cell selection edit mode, move to the next cell
