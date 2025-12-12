@@ -830,8 +830,6 @@ while (true)
         Console.WriteLine("Copied Row: " + string.Join(",", clipboardRow));
     }
 
-    Console.WriteLine("Current Version: " + currentVersion.ToString());
-
     DateTime start = DateTime.Now;
     ConsoleKeyInfo keyInfo = default;
     bool keyPressed = false;
@@ -1339,14 +1337,12 @@ while (true)
     }
         
 
-    if (
-        keyInfo.Key == ConsoleKey.Z
+    if (keyInfo.KeyChar == 'Z' 
         && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
     )
     {
         string tmpDir = Path.GetTempPath();
-        currentVersion--;
-        string tmpFile = tmpDir + "/csv-cli-bak" + currentVersion.ToString() + ".csv";
+        string tmpFile = tmpDir + "/csv-cli-bak0.csv";
         File.Copy(tmpFile, "__db.csv", true); 
         continue;
     }
