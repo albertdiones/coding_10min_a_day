@@ -158,7 +158,8 @@ but only spending 10 minutes a day
 151. save backup to temp folder before updating csv (before SetCsvToBlank())
 152. ctrl z(or shift z) restores latest backup
 153. separate backup file per change (per call of SetCSvToBlank())
-154. pressing ctrl Z twice restores, previous previous state
+154. pressing shift Z continuously progressively restores the older backed up version
+155. pressing ctrl Y "redo" the previously undid changes
 
 # catch the tab on cell selection edit mode, move to the next cell
 
