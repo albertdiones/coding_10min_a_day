@@ -1084,7 +1084,7 @@ while (true)
             if (targetRowId >= rows.Length)
             {
                 targetRowId = rows.Length - 1;
-                pageOffset = Math.Min(allRows.Length - perPage, pageOffset + 1);
+                pageOffset = Math.Min(allRows.Length - perPage - 1, pageOffset + 1);
             }
             selectedRowIndex = targetRowId;
 
