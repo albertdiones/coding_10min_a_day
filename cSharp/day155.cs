@@ -177,6 +177,19 @@ int backCurrentVersion()
     string dbFile = "__db.csv";
     currentVersion++;
     string tmpFile = getBackupFilePath(currentVersion);
+
+    int x = currentVersion;
+    while (true)
+    {
+        string existingFile = getBackupFilePath(x);
+
+        if (!File.Exists(existingFile))
+            break;
+
+        File.Delete(existingFile);
+        x++;
+    }
+
     File.Copy(dbFile, tmpFile); 
     File.WriteAllText(currentVersionFileName, currentVersion.ToString());
     return currentVersion;
@@ -1350,6 +1363,28 @@ while (true)
         File.Copy(tmpFile, "__db.csv", true); 
         continue;
     }
+
+    
+        
+
+    if (
+        keyInfo.Key == ConsoleKey.Y
+        && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
+    )
+    {
+        string tmpDir = Path.GetTempPath();
+        currentVersion++;
+        string tmpFile = tmpDir + "/csv-cli-bak" + currentVersion.ToString() + ".csv";
+        if (File.Exists(tmpFile)) {
+            File.Copy(tmpFile, "__db.csv", true); 
+        }
+        else
+        {
+            currentVersion--;
+        }
+        continue;
+    }
+
 
     if (keyInfo.Key == ConsoleKey.Escape)
     {
