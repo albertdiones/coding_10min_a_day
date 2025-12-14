@@ -345,7 +345,7 @@ void ConsoleWriteWithColor(
         Console.BackgroundColor = backgroundColor.Value;
     }
 
-    Console.Write(message);
+    Console.Write(message == "" ? "█" : message);
     Console.ResetColor();
 }
 
@@ -471,6 +471,11 @@ void PrettyPrintRows(
                     cellDisplay,
                     ConsoleColor.Yellow
                 );
+                
+                if (cell.Length == 0)
+                {
+                    padding--;
+                }
             }
             else if (
                 selectedColumnIndex != null
@@ -482,6 +487,11 @@ void PrettyPrintRows(
                     cellDisplay,
                     ConsoleColor.Cyan
                 );
+                
+                if (cell.Length == 0)
+                {
+                    padding--;
+                }
             }
             else if (rowId == 0)
             {
@@ -489,6 +499,11 @@ void PrettyPrintRows(
                     cellDisplay,
                     ConsoleColor.Green
                 );
+                
+                if (cell.Length == 0)
+                {
+                    padding--;
+                }
             }
             else if (
                 highlightRowIds.Contains(rowId)
@@ -498,6 +513,11 @@ void PrettyPrintRows(
                     cellDisplay,
                     ConsoleColor.Yellow
                 );
+                
+                if (cell.Length == 0)
+                {
+                    padding--;
+                }
             }
             else if (
                 selectedRowId == rowId
@@ -508,6 +528,11 @@ void PrettyPrintRows(
                     cellDisplay,
                     ConsoleColor.Green
                 );
+                
+                if (cell.Length == 0)
+                {
+                    padding--;
+                }
             }
             else
             {
