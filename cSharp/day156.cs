@@ -901,12 +901,27 @@ while (true)
 
         if (
             keyInfo.Key == ConsoleKey.RightArrow
-            ||
-            (
-               keyInfo.Key == ConsoleKey.Tab
-            )
         )
         {
+            selectedColumnIndex = Math.Min(
+                rows[0].Length - 1,
+                selectedColumnIndex.Value + 1
+            );
+            continue;
+        }
+
+        if (
+            keyInfo.Key == ConsoleKey.Tab
+        )
+        {
+            if ( 
+                (rows[0].Length - 1) == selectedColumnIndex.Value
+            )
+            {
+                selectedColumnIndex = 1;
+                selectedRowIndex++;
+                continue;
+            }
             selectedColumnIndex = Math.Min(
                 rows[0].Length - 1,
                 selectedColumnIndex.Value + 1
