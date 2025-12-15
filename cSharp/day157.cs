@@ -937,6 +937,7 @@ while (true)
 
         if (
             keyInfo.Key == ConsoleKey.Tab
+            && ((keyInfo.Modifiers & ConsoleModifiers.Shift) == 0)
         )
         {
             if ( 
@@ -950,6 +951,30 @@ while (true)
             selectedColumnIndex = Math.Min(
                 rows[0].Length - 1,
                 selectedColumnIndex.Value + 1
+            );
+            continue;
+        }
+
+        
+        if (
+            keyInfo.Key == ConsoleKey.Tab
+            && ((keyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
+        )
+        {
+
+            // leftmost cell
+            if ( 
+                1 == selectedColumnIndex.Value
+            )
+            {
+                selectedColumnIndex = rows[0].Length - 1;
+                selectedRowIndex--;
+                continue;
+            }
+
+            selectedColumnIndex = Math.Max(
+                1,
+                selectedColumnIndex.Value - 1
             );
             continue;
         }

@@ -160,6 +160,9 @@ but only spending 10 minutes a day
 153. separate backup file per change (per call of SetCSvToBlank())
 154. pressing shift Z continuously progressively restores the older backed up version
 155. pressing ctrl Y "redo" the previously undid changes
+156. cell selection mode - pressing tab at the end cell moves the highlight/cursor to the next row's first cell
+157. cell selection mode - pressing shift tab moves the highlight/cursor backwards
+158. vertical size responsive table
 
 # catch the tab on cell selection edit mode, move to the next cell
 
