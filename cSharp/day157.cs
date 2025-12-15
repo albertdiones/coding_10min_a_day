@@ -945,6 +945,11 @@ while (true)
             )
             {
                 selectedColumnIndex = 1;
+                if (selectedRowIndex == perPage)
+                {
+                    pageOffset = Math.Min(allRows.Length - perPage - 1, pageOffset + 1);
+                    continue;
+                }
                 selectedRowIndex++;
                 continue;
             }
@@ -968,6 +973,11 @@ while (true)
             )
             {
                 selectedColumnIndex = rows[0].Length - 1;
+                if (selectedRowIndex == 1)
+                {
+                    pageOffset = Math.Max(0, pageOffset - 1);
+                    continue;
+                }
                 selectedRowIndex--;
                 continue;
             }
