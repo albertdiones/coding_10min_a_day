@@ -228,7 +228,7 @@ void DeleteCsvRow(int deleteRowId)
         {
             continue;
         }
-        AddToCsv(row);
+        AddToCsv(row.Skip(1).ToArray());
     }
 }
 
@@ -661,28 +661,27 @@ void AddNewColumnRoutine()
 
 }
 
-void DeleteColumn(string columnName)
+void DeleteColumn(int selectedColumnIndex)
 {
     string[][] rows = ReadAllCsvRow().ToArray();
 
-    int columnIndex = GetCsvColumnNumber(columnName) - 1;
     SetCsvToBlank();
     for (int x = 0; x < rows.Length; x++)
     {
         var newRowList = rows[x].ToList();
-        newRowList.RemoveAt(columnIndex);
+        newRowList.RemoveAt(selectedColumnIndex);
 
         string[] newRow = newRowList.ToArray();
-        AddToCsv(newRow);
+        AddToCsv(newRow.Skip(1).ToArray());
     }
 }
 
-void DeleteColumnRoutine(string selectedColumnName)
+void DeleteColumnRoutine(int selectedColumnIndex)
 {
 
     Console.WriteLine(
         "Are you sure you want to delete this column? "
-        + selectedColumnName
+        + selectedColumnIndex
     );
     string confirmationInput = Console.ReadLine();
 
@@ -693,7 +692,7 @@ void DeleteColumnRoutine(string selectedColumnName)
 
     if (confirmed)
     {
-        DeleteColumn(selectedColumnName);
+        DeleteColumn(selectedColumnIndex);
         Console.WriteLine("Successfully Deleted Column");
     }
     else
@@ -1064,7 +1063,7 @@ while (true)
 
         if (keyInfo.KeyChar == 'D')
         {
-            DeleteColumnRoutine(rows[0][selectedColumnIndex.Value]);
+            DeleteColumnRoutine(selectedColumnIndex.Value);
             continue;
         }
 
