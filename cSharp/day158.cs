@@ -819,6 +819,8 @@ while (true)
     
     int rowNumberOffset = pageOffset + ((page - 1) * 15);
 
+    perPage = Console.WindowHeight - 13;
+
     string[][] pageRows = allRows
         .Skip(1 + rowNumberOffset)
         .Take(perPage)
