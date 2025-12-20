@@ -786,6 +786,8 @@ bool? sortAscending = null;
 string[] clipboardRow = [];
 int? deleteRowWhenPasted = null;
 
+bool enterDirectionIsDown = true;
+
 
 while (true)
 {
@@ -1115,6 +1117,32 @@ while (true)
     else if (rowSelectionMode)
     {
 
+
+
+
+        if (
+            keyInfo.Key == ConsoleKey.Enter
+        ) {
+            if (enterDirectionIsDown) {
+                columnSelectionMode = true;
+                cellSelectionMode = true;
+                selectedColumnIndex = 1;
+                enterDirectionIsDown = false;
+            }
+            else
+            {
+                columnSelectionMode = false;
+                cellSelectionMode = false;
+                selectedColumnIndex = null;
+                enterDirectionIsDown = true;
+                selectedRowIndex = 0;
+                selectedRowId = 0;
+                rowSelectionMode = false;
+            }
+            continue;
+        }
+
+
         if (keyInfo.KeyChar == 'u')
         {
             UpdateRowRoutine(selectedRowId);
@@ -1346,6 +1374,13 @@ while (true)
     else
     {
 
+
+        if (
+            keyInfo.Key == ConsoleKey.Enter
+        ) {
+            selectedRowIndex = 1;
+            continue;
+        }
 
 
 
