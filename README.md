@@ -163,12 +163,11 @@ but only spending 10 minutes a day
 156. cell selection mode - pressing tab at the end cell moves the highlight/cursor to the next row's first cell
 157. cell selection mode - pressing shift tab moves the highlight/cursor backwards
 158. vertical size responsive table
+159. pressing enter toggles between: default -> row selection mode -> cell selection mode -> row selection mode -> default
+160. ctrl + down arrow switches selected row with the one below
+161. ctrl + up arrow switches selected row with the one above
+162. press G to go to a page
 
-# catch the tab on cell selection edit mode, move to the next cell
-
-
-# save backup to temp folder before updating or before clearing the whole file
-# when pressing ctrl Z, restore latest backup
 
 backup/change history
 
