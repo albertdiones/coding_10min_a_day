@@ -164,9 +164,14 @@ but only spending 10 minutes a day
 157. cell selection mode - pressing shift tab moves the highlight/cursor backwards
 158. vertical size responsive table
 159. pressing enter toggles between: default -> row selection mode -> cell selection mode -> row selection mode -> default
-160. ctrl + down arrow switches selected row with the one below
-161. ctrl + up arrow switches selected row with the one above
-162. press G to go to a page
+160. install an sql db application then create a script to connect
+161. create script that creates a database/schema
+162. create script that creates a table under the schema/database
+163. create a script that will insert random rows to the table
+164. create a script that will print the count of rows in a table
+165. create a script that will print all the rows in table
+166. create a script that will delete the latest row in the table
+167. create a script that will update the first row in the table
 
 
 backup/change history
