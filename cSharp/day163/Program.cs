@@ -28,6 +28,32 @@ void CreateTable(
     cmd.ExecuteNonQuery();
 }
 
+
+
+void InsertRow(
+    MySqlConnection connection,
+    string tableName,
+    Dictionary<string, string> row
+)
+{
+    if (row == null || row.Count == 0)
+        throw new ArgumentException("At least one column must be specified.");
+
+    var columNames = string.Join(", ",
+        row.Select(c => $"{c.Key}")
+    );
+
+    
+    var values = "'" + string.Join("', '",
+        row.Select(c => $"{c.Value}")
+    ) + "'";
+
+
+    string query = $"INSERT INTO {tableName}({columNames}) VALUES({values});";
+
+    using var cmd = new MySqlCommand(query, connection);
+    cmd.ExecuteNonQuery();
+}
 using (MySqlConnection connection = new MySqlConnection(connectionString))
 {
     try
@@ -38,16 +64,16 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
 
         int x = rand.Next(1,9999999);
 
-        var columns = new Dictionary<string, string>
+        var row = new Dictionary<string, string>
             {
-                { "id", "INT AUTO_INCREMENT PRIMARY KEY" }
+                { "id", x.ToString() }
             };
 
-        string tableName = "lamesa_" + x;
+        string tableName = "lamesa_2861101";
 
-        CreateTable(connection, tableName, columns);
+        InsertRow(connection, tableName, row);
 
-        Console.WriteLine("created table: " + tableName);
+        Console.WriteLine("inserted row!! id: " + x);
     }
     catch (Exception ex)
     {
