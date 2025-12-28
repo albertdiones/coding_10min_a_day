@@ -54,10 +54,24 @@ void InsertRow(
     using var cmd = new MySqlCommand(query, connection);
     cmd.ExecuteNonQuery();
 }
+
+
+
+string SelectCount(
+    MySqlConnection connection,
+    string tableName
+)
+{
+
+    string query = $"SELECT COUNT(0) FROM {tableName}";
+
+    using var cmd = new MySqlCommand(query, connection);
+    return cmd.ExecuteScalar().ToString();
+}
+
+
 using (MySqlConnection connection = new MySqlConnection(connectionString))
 {
-    try
-    {
         connection.Open();
         
         Random rand = new Random();
@@ -74,9 +88,5 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
         InsertRow(connection, tableName, row);
 
         Console.WriteLine("inserted row!! id: " + x);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("Error: " + ex.Message);
-    }
+        Console.WriteLine("table row count: " + SelectCount(connection, tableName));
 }
