@@ -1,6 +1,10 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+
+
 string connectionString = "Server=localhost;User ID=root;Password=543210-1;Database=hello1";
+
 
 void createSchema(MySqlConnection connection, string schemaName)
 {
@@ -70,6 +74,21 @@ string SelectCount(
 }
 
 
+MySqlDataReader SelectRows(
+    MySqlConnection connection,
+    string tableName
+)
+{
+
+    string query = $"SELECT * FROM {tableName}";
+
+    using var cmd = new MySqlCommand(query, connection);
+
+    return cmd.ExecuteReader();
+}
+
+
+
 using (MySqlConnection connection = new MySqlConnection(connectionString))
 {
         connection.Open();
@@ -89,4 +108,11 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
 
         Console.WriteLine("inserted row!! id: " + x);
         Console.WriteLine("table row count: " + SelectCount(connection, tableName));
+
+
+        MySqlDataReader reader = SelectRows(connection, tableName);
+        while (reader.Read())
+        {
+            Console.WriteLine(String.Format("{0}", reader[0]));
+        }
 }

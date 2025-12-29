@@ -169,7 +169,8 @@ but only spending 10 minutes a day
 162. create script that creates a table under the schema/database
 163. create a script that will insert random rows to the table
 164. create a script that will print the count of rows in a table
-165. create a script that will print all the rows in table
+165. create a script that will print a table's all the rows' single column 
+166. create a script that will print all rows and all columns in a table
 166. create a script that will delete the latest row in the table
 167. create a script that will update the first row in the table
 
