@@ -99,7 +99,8 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
 
         var row = new Dictionary<string, string>
             {
-                { "id", x.ToString() }
+                { "id", x.ToString() },
+                {  "name", "Jay" }
             };
 
         string tableName = "lamesa_2861101";
@@ -113,6 +114,12 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
         MySqlDataReader reader = SelectRows(connection, tableName);
         while (reader.Read())
         {
-            Console.WriteLine(String.Format("{0}", reader[0]));
+            List<string> values = new List<string>();
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                values.Add(reader.IsDBNull(i) ? "" : reader.GetValue(i).ToString());
+            }
+
+            Console.WriteLine(string.Join(',', values.ToArray()));
         }
 }
