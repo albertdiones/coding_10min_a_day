@@ -88,38 +88,62 @@ MySqlDataReader SelectRows(
 }
 
 
+void UpdateRow(
+    MySqlConnection connection,
+    string tableName,
+    string rowId,
+    Dictionary<string, string> values
+)
+{
+    if (values == null || values.Count == 0)
+        throw new ArgumentException("At least one column must be specified.");
+
+    var updateSets = string.Join(", ",
+        values.Select(c => $"{c.Key} = '{c.Value}'")
+    );
+
+    string query = $"UPDATE `{tableName}` SET {updateSets} WHERE id = {rowId};";
+
+    using var cmd = new MySqlCommand(query, connection);
+    cmd.ExecuteNonQuery();
+}
+
 
 using (MySqlConnection connection = new MySqlConnection(connectionString))
 {
-        connection.Open();
+    connection.Open();
         
-        Random rand = new Random();
+    string tableName = "lamesa_2861101";
 
-        int x = rand.Next(1,9999999);
-
-        var row = new Dictionary<string, string>
-            {
-                { "id", x.ToString() },
-                {  "name", "Jay" }
-            };
-
-        string tableName = "lamesa_2861101";
-
-        InsertRow(connection, tableName, row);
-
-        Console.WriteLine("inserted row!! id: " + x);
-        Console.WriteLine("table row count: " + SelectCount(connection, tableName));
+    Console.WriteLine("table row count: " + SelectCount(connection, tableName));
 
 
-        MySqlDataReader reader = SelectRows(connection, tableName);
+    
+        string firstRowId = "";
+
+    using (var reader = SelectRows(connection, tableName)) {
         while (reader.Read())
         {
             List<string> values = new List<string>();
             for (int i = 0; i < reader.FieldCount; i++)
             {
+                if (i == 0 && firstRowId == "") {
+                    firstRowId = reader.GetValue(i).ToString();
+                }
                 values.Add(reader.IsDBNull(i) ? "" : reader.GetValue(i).ToString());
             }
 
             Console.WriteLine(string.Join(',', values.ToArray()));
         }
+    }
+
+
+    UpdateRow(
+        connection,
+        tableName, 
+        firstRowId, 
+        new Dictionary<string, string>{
+            {  "name", "Makmak" }
+        }
+    );
 }
