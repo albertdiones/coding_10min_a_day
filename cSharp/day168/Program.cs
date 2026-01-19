@@ -104,6 +104,8 @@ void UpdateRow(
 
     string query = $"UPDATE `{tableName}` SET {updateSets} WHERE id = {rowId};";
 
+    Console.WriteLine(query);
+
     using var cmd = new MySqlCommand(query, connection);
     cmd.ExecuteNonQuery();
 }
@@ -118,32 +120,23 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
     Console.WriteLine("table row count: " + SelectCount(connection, tableName));
 
 
+
+    string query = $"SELECT * FROM {tableName} ORDER BY id DESC LIMIT 1";
+
+    using var cmd = new MySqlCommand(query, connection);
+
+    string lastRowId = "";
+
+    lastRowId = cmd.ExecuteScalar().ToString();
+    cmd.ExecuteScalar().ToString();
     
-        string firstRowId = "";
-
-    using (var reader = SelectRows(connection, tableName)) {
-        while (reader.Read())
-        {
-            List<string> values = new List<string>();
-            for (int i = 0; i < reader.FieldCount; i++)
-            {
-                if (i == 0 && firstRowId == "") {
-                    firstRowId = reader.GetValue(i).ToString();
-                }
-                values.Add(reader.IsDBNull(i) ? "" : reader.GetValue(i).ToString());
-            }
-
-            Console.WriteLine(string.Join(',', values.ToArray()));
-        }
-    }
-
-
     UpdateRow(
         connection,
         tableName, 
-        firstRowId, 
+        lastRowId, 
         new Dictionary<string, string>{
-            {  "name", "Makmak" }
+            {  "name", "John" }
         }
     );
+
 }
