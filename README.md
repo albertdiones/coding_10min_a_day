@@ -174,7 +174,10 @@ but only spending 10 minutes a day
 166. create a script that will delete the latest row in the table
 167. create a script that will update the first row in the table
 168. create a script that will update the last row in the table
-169. create a script that asks for an id, then updates the row that matches the id in the table
+169. create a script that asks for an id, then deletes the row that matches the id in the table
+170. create a script that asks for an id, then displays the row that matches the id in the table
+171. create a script that asks for an id, then updates the row that matches the id in the table
+172. create a script that asks for name, then inserts the a new row with that name on the table.
 
 170. install a mongodb db application then create a script to connect
 172. create script that creates a database/schema (INDEX???)

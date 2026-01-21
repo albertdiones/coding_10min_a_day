@@ -119,24 +119,21 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
 
     Console.WriteLine("table row count: " + SelectCount(connection, tableName));
 
+    Console.WriteLine("");
 
+    Console.WriteLine("Please input the row id you want to delete:");
 
-    string query = $"SELECT * FROM {tableName} ORDER BY id DESC LIMIT 1";
+    string inputId = Console.ReadLine();
+    
+    int.TryParse(inputId, out int deleteId);
+
+    string query = $"DELETE FROM {tableName} WHERE id = '{deleteId}'";
 
     using var cmd = new MySqlCommand(query, connection);
 
-    string lastRowId = "";
-
-    lastRowId = cmd.ExecuteScalar().ToString();
-    cmd.ExecuteScalar().ToString();
+    cmd.ExecuteNonQuery();
     
-    UpdateRow(
-        connection,
-        tableName, 
-        lastRowId, 
-        new Dictionary<string, string>{
-            {  "name", "John" }
-        }
-    );
+    Console.WriteLine("Sucessfully deleted row");
+    Console.WriteLine("table row count: " + SelectCount(connection, tableName));
 
 }
