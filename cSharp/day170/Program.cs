@@ -111,6 +111,178 @@ void UpdateRow(
 }
 
 
+void PrettyPrintRows(
+    string[][] rows,
+    int? selectedColumnIndex = null,
+    bool includeRowNumbers = false,
+    int rowNumberOffset = 0
+)
+{
+    if (rows.Length == 0)
+    {
+        return;
+    }
+
+    int[] colMaxLengths = new int[rows[0].Length];
+
+    foreach (string[] row in rows)
+    {
+        foreach (
+            var (index, cell)
+                in row.Select(
+                    (arrayValue, Arrayindex)
+                        => (Arrayindex, arrayValue)
+                ))
+        {
+            colMaxLengths[index] = Math.Max(
+                colMaxLengths[index],
+                cell.Length
+            );
+        }
+    }
+
+    int totalLength = colMaxLengths.Sum();
+
+    int minTableWidth = totalLength + (4 * colMaxLengths.Length);
+
+    if (includeRowNumbers)
+    {
+        minTableWidth += 2;
+    }
+
+    int vacantSpace = Console.WindowWidth - minTableWidth;
+
+    int[] columnWidths = (int[])colMaxLengths.Clone();
+
+    foreach (
+        var (columnNumber, columnWidth)
+                in columnWidths.Select(
+                    (arrayValue, Arrayindex)
+                        => (Arrayindex, arrayValue)
+                )
+    )
+    {
+        double additional = vacantSpace * columnWidths[columnNumber] / totalLength;
+
+        columnWidths[columnNumber] += Convert.ToInt32(
+            Math.Round(
+                additional
+            )
+        );
+    }
+
+    int tableWidth = minTableWidth + vacantSpace -2;
+
+    // Border sa taas
+    Console.WriteLine(
+        ' ' +
+        new string('-', tableWidth - 3)
+    );
+
+    foreach (
+        var (rowId, row)
+            in rows.Select(
+                (arrayValue, Arrayindex)
+                    => (Arrayindex, arrayValue)
+            )
+    )
+    {
+
+        Console.Write("|");
+        foreach (
+            var (index, cell)
+                in row.Select(
+                    (arrayValue, Arrayindex)
+                        => (Arrayindex, arrayValue)
+                )
+        )
+        {
+
+            if (includeRowNumbers && index == 0)
+            {
+                Console.Write(rowId < 10
+                    ? (rowId + rowNumberOffset) + " |"
+                    : (rowId + rowNumberOffset) + "|"
+                );
+            }
+
+            int padding = columnWidths[index]
+                - cell.Length;
+
+            string cellDisplay = cell;
+            if (padding < 0) {
+               int newLength = Math.Max(0, cell.Length + padding);
+               cellDisplay = cell.Substring(0, newLength);
+            }
+
+
+            Console.Write(
+                ' '
+            );
+
+            if (rowId == 0)
+            {
+                ConsoleWriteWithColor(
+                    cellDisplay,
+                    ConsoleColor.Green
+                );
+            }
+            else
+            {
+                Console.Write(cellDisplay);
+            }
+            if (padding > 0) {
+                Console.Write(
+                    new string(' ', padding)
+                );
+            }
+
+            Console.Write(
+                " |"
+            );
+        }
+        Console.Write("\n");
+
+        if (rowId == 0)
+        {
+            Console.WriteLine(
+                new string(
+                    '-',
+                    tableWidth - 2
+                )
+            );
+        }
+    }
+
+
+
+    // bottom border
+    Console.WriteLine(
+        ' ' +
+        new string('-', tableWidth - 3)
+    );
+}
+
+
+void ConsoleWriteWithColor(
+    string message,
+    ConsoleColor foregroundColor,
+    ConsoleColor? backgroundColor = null
+)
+{
+    Console.ForegroundColor = foregroundColor;
+
+    if (backgroundColor != null)
+    {
+        Console.BackgroundColor = backgroundColor.Value;
+    }
+
+    Console.Write(message);
+    Console.ResetColor();
+}
+
+
+
 using (MySqlConnection connection = new MySqlConnection(connectionString))
 {
     connection.Open();
@@ -121,19 +293,29 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
 
     Console.WriteLine("");
 
-    Console.WriteLine("Please input the row id you want to delete:");
+    Console.WriteLine("Please input the row id you want to display:");
 
     string inputId = Console.ReadLine();
     
-    int.TryParse(inputId, out int deleteId);
+    int.TryParse(inputId, out int selectId);
 
-    string query = $"DELETE FROM {tableName} WHERE id = '{deleteId}'";
+    string query = $"SELECT * FROM {tableName} WHERE id = '{selectId}'";
 
     using var cmd = new MySqlCommand(query, connection);
 
-    cmd.ExecuteNonQuery();
-    
-    Console.WriteLine("Sucessfully deleted row");
-    Console.WriteLine("table row count: " + SelectCount(connection, tableName));
+    var reader = cmd.ExecuteReader();
+    while (reader.Read()) {
+        List<string> values = new List<string>();
+        for (int i = 0; i < reader.FieldCount; i++)
+        {
+            values.Add(reader.IsDBNull(i) ? "" : reader.GetValue(i).ToString());
+        }
+        PrettyPrintRows(
+            new string[][]{
+                new string[]{"Id","Name"},
+                values.ToArray()
+            }
+        );
+    }
 
 }
