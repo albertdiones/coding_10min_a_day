@@ -291,19 +291,32 @@ using (MySqlConnection connection = new MySqlConnection(connectionString))
 
     Console.WriteLine("table row count: " + SelectCount(connection, tableName));
 
-    Console.WriteLine("");
+    Console.WriteLine("Please input an id you want to update");
 
-    Console.WriteLine("Please input the row id you want to display:");
+    string inputValue = Console.ReadLine();
 
-    string inputId = Console.ReadLine();
+    int.TryParse(inputValue, out int inputId);
+
+    Console.WriteLine("Please input new name for the row selected (" + inputValue + ")");
+
+    string inputNameValue = Console.ReadLine();
+
+
+    UpdateRow(
+        connection,
+        tableName,
+        inputValue,        
+        new Dictionary<string, string>{
+            {  "name", inputNameValue }
+        }
+    );
     
-    int.TryParse(inputId, out int selectId);
+    
+    string query2 = $"SELECT * FROM {tableName}";
 
-    string query = $"SELECT * FROM {tableName} WHERE id = '{selectId}'";
+    using var cmd2 = new MySqlCommand(query2, connection);
 
-    using var cmd = new MySqlCommand(query, connection);
-
-    var reader = cmd.ExecuteReader();
+    var reader = cmd2.ExecuteReader();
     while (reader.Read()) {
         List<string> values = new List<string>();
         for (int i = 0; i < reader.FieldCount; i++)
